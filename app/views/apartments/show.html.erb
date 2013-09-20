@@ -1,0 +1,220 @@
+<% if @apartment.isAvailable == true || current_user == @apartment.user %>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+              <h1><%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
+              <% if @apartment.isAvailable == false %>
+                <%= link_to 'This unit is currently UNAVAILABLE and not listed. Click here to modify listing', edit_apartment_path(@apartment), class: "btn btn-danger btn-large" %>
+              <% else %>
+                <%= link_to "Available Now! Click Here To Submit Application", "#", class: "btn btn-success btn-large" %>
+              <% end %>
+            </center>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="span4">
+          <div class="well">
+            <h2>Apartment Info</h2><hr>
+           <p>
+              <strong>Address: </strong><%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %>
+            </p>
+       
+            <p>
+              <strong>Rent: $</strong><%= @apartment.rent %>
+            </p>
+
+            <p>
+              <strong>Description: </strong><%= @apartment.description %>
+            </p>
+
+            <p>
+              <strong>Square Footage: </strong><%= @apartment.sqFootage %>
+            </p>
+
+            <p>
+              <strong>Beds: </strong><%= @apartment.beds %>
+            </p>
+
+            <p>
+              <strong>Baths: </strong><%= @apartment.baths %>
+            </p>
+
+            <p>
+              <strong>Parking Spaces: </strong><%= @apartment.parking %>
+            </p>
+
+            <p>
+              <strong>Pets Allowed: </strong>
+              <% if @apartment.pets == true %>
+                Yes
+                <% else %>
+                No
+              <% end %>
+            </p>
+          </div>
+      </div>
+
+      <div class="span4">
+          <div class="well">
+            <h2>Amenities</h2><hr>
+              <strong>
+                <% if @apartment.stove == true %>
+                  <p>
+                    Stove
+                  </p>
+                <% end %>
+
+                <% if @apartment.washer == true && @apartment.dryer == true %>            
+                  <p>
+                    Washer and Dryer
+                  </p>
+                <% elsif @apartment.washer == true && @apartment.dryer == false %>
+                  <p>
+                    Washer
+                  </p>
+                <% elsif @apartment.washer == false && @apartment.dryer == true %>
+                  <p>
+                    Dryer
+                  </p>
+                <% end %>
+
+                <% if @apartment.laundryOnSite == true %>
+                  <p>
+                    Laundry on site         
+                  </p>
+                <% end %>
+
+                <% if @apartment.refrigerator == true %>
+                  <p>
+                    Refrigerator
+                  </p>
+                <% end %>
+
+                <% if @apartment.microwave == true %>
+                  <p>
+                    Microwave
+                  </p>
+                <% end %>
+
+                <% if @apartment.dishwasher == true %>
+                  <p>
+                    Dishwasher
+                  </p>
+                <% end %>
+
+                <% if @apartment.hardwoodFloors == true %>
+                  <p>
+                    Hardwood Floors
+                  </p>
+                <% end %>
+
+                <% if @apartment.gasHeater == true %>
+                  <p>
+                    Gas Heater
+                  </p>
+                <% end %>
+                
+                <% if @apartment.airConditioning == true %>
+                  <p>
+                    Air Conditioning
+                  </p> 
+                <% end %>
+
+                <% if @apartment.balcony == true %>
+                  <p>
+                    Balcony
+                  </p>
+                <% end %>
+
+                <% if @apartment.fireplace == true %>
+                  <p>
+                    Fireplace
+                  </p>
+                <% end %>
+
+                <% if @apartment.patio == true %>
+                  <p>
+                    Patio
+                  </p> 
+                <% end%>  
+              </strong>
+  </div>
+  </div>
+
+      <div class="span4">
+          <div class="well">
+              <h2>Paid Utilities</h2>
+              <hr>
+              <strong>
+                <% if @apartment.util_gas == true %>
+                  <p>
+                    Gas
+                  </p> 
+                <% end%>  
+
+                <% if @apartment.util_electric == true %>
+                  <p>
+                    Electric
+                  </p> 
+                <% end%>  
+
+                <% if @apartment.util_water == true %>
+                  <p>
+                    Water
+                  </p> 
+                <% end%>  
+
+                <% if @apartment.util_maid == true %>
+                  <p>
+                    Maid Service
+                  </p> 
+                <% end%>  
+
+                <% if @apartment.util_trash == true %>
+                  <p>
+                    Trash Collection
+                  </p> 
+                <% end%>  
+
+                <% if @apartment.util_gardener == true %>
+                  <p>
+                    Gardener
+                  </p> 
+                <% end%>  
+              </strong>          
+          </div>
+      </div>
+
+  </div>
+
+<% else %>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This unit is currently unavailable</h1>
+            </center>
+          </div>
+      </div>
+  </div>
+<% end %>
+
+<div class="row">
+    <div class="span12">
+        <div class="well">
+          <center>
+            <% if current_user == @apartment.user %>
+              <%= link_to 'Modify', edit_apartment_path(@apartment), class: "btn btn-success" %>
+            <% end %>
+            <%= link_to 'Show All Availabilities', apartments_path, class: "btn btn-primary" %>
+          </center>
+        </div>
+    </div>
+</div>
+
+
+
+

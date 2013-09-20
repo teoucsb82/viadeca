@@ -11,7 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920223304) do
+ActiveRecord::Schema.define(version: 20130920225327) do
+
+  create_table "apartments", force: true do |t|
+    t.string   "streetAddress"
+    t.string   "aptNumber"
+    t.integer  "rent"
+    t.boolean  "isAvailable"
+    t.string   "description"
+    t.integer  "sqFootage"
+    t.string   "beds"
+    t.string   "baths"
+    t.integer  "parking"
+    t.boolean  "stove"
+    t.boolean  "washer"
+    t.boolean  "dryer"
+    t.boolean  "refrigerator"
+    t.boolean  "microwave"
+    t.boolean  "dishwasher"
+    t.boolean  "laundryOnSite"
+    t.boolean  "hardwoodFloors"
+    t.boolean  "pets"
+    t.boolean  "gasHeater"
+    t.boolean  "balcony"
+    t.boolean  "airConditioning"
+    t.boolean  "fireplace"
+    t.boolean  "patio"
+    t.boolean  "util_gas"
+    t.boolean  "util_water"
+    t.boolean  "util_electric"
+    t.boolean  "util_maid"
+    t.boolean  "util_trash"
+    t.boolean  "util_gardener"
+    t.boolean  "util_cable"
+    t.boolean  "util_internet"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "apartments", ["user_id"], name: "index_apartments_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

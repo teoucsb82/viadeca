@@ -1,0 +1,15 @@
+<% if apartment.isAvailable == true || current_user == apartment.user %>
+      <tr>
+        <td><%= apartment.streetAddress %>, #<%= apartment.aptNumber %></td>
+        <td><%= apartment.description %></td>
+        <td><%= apartment.rent %></td>
+        <td><%= apartment.beds %></td>
+        <td><%= apartment.baths %></td>
+        <td><%= apartment.isAvailable %></td>
+        <td><%= link_to 'Show info', apartment, class: "btn btn-primary btn-small" %></td>
+        <% if current_user == apartment.user %>
+            <td><%= link_to 'Modify', edit_apartment_path(apartment), class: "btn btn-success btn-small" %></td>
+            <td><%= link_to 'Delete', apartment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %></td>
+        <% end %>
+      </tr>
+<% end %>

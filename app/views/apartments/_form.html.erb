@@ -1,0 +1,42 @@
+<%= simple_form_for(@apartment, html: {class: "form-horizontal"} ) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :isAvailable, label: "Unit is currently available" %>
+    <%= f.input :streetAddress, label: "Street Address" %>
+    <%= f.input :aptNumber, label: "Apt Number" %>
+    <%= f.input :rent %>
+    <%= f.input :description, as: :text, input_html: { rows: "6" } %>
+    <%= f.input :sqFootage, label: "Square Footage" %>
+    <%= f.input :beds %>
+    <%= f.input :baths %>
+    <%= f.input :parking, label: "Parking Spaces" %>
+    <h2>Amenities</h2>
+    <%= f.input :stove, label: "Includes stove" %>
+    <%= f.input :washer, label: "Includes washer" %>
+    <%= f.input :dryer, label: "Includes dryer" %>
+    <%= f.input :refrigerator, label: "Includes refrigerator" %>
+    <%= f.input :microwave, label: "Includes stove" %>
+    <%= f.input :dishwasher, label: "Includes dishwasher" %>
+    <%= f.input :laundryOnSite, label: "Includes laundry on site" %>
+    <%= f.input :hardwoodFloors, label: "Includes hardwood floors" %>
+    <%= f.input :pets, label: "Pets allowed?" %>
+    <%= f.input :gasHeater, label: "Includes gas heater" %>
+    <%= f.input :balcony, label: "Includes balcony" %>
+    <%= f.input :airConditioning, label: "Includes Air Conditioning" %>
+    <%= f.input :fireplace, label: "Includes fireplace" %>
+    <%= f.input :patio, label: "Includes patio" %>
+    <h2>Paid Utilities</h2>
+    <%= f.input :util_gas, label: "Includes gas" %>
+    <%= f.input :util_water, label: "Includes water" %>
+    <%= f.input :util_electric, label: "Includes electricity" %>
+    <%= f.input :util_maid, label: "Includes maid service" %>
+    <%= f.input :util_trash, label: "Includes trash" %>
+    <%= f.input :util_gardener, label: "Includes gardener" %>
+    <%= f.input :util_cable, label: "Includes cable" %>
+    <%= f.input :util_internet, label: "Includes internet" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
+  </div>
+<% end %>

@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  streetAddress: MyString
+  aptNumber: MyString
+  rent: 1
+  isAvailable: false
+  description: MyString
+  sqFootage: 1
+  beds: MyString
+  baths: MyString
+  parking: 1
+  stove: false
+  washer: false
+  dryer: false
+  refrigerator: false
+  microwave: false
+  dishwasher: false
+  laundryOnSite: false
+  hardwoodFloors: false
+  pets: false
+  gasHeater: false
+  balcony: false
+  airConditioning: false
+  fireplace: false
+  patio: false
+  util_gas: false
+  util_water: false
+  util_electric: false
+  util_maid: false
+  util_trash: false
+  util_gardener: false
+  util_cable: false
+  util_internet: false
+
+two:
+  streetAddress: MyString
+  aptNumber: MyString
+  rent: 1
+  isAvailable: false
+  description: MyString
+  sqFootage: 1
+  beds: MyString
+  baths: MyString
+  parking: 1
+  stove: false
+  washer: false
+  dryer: false
+  refrigerator: false
+  microwave: false
+  dishwasher: false
+  laundryOnSite: false
+  hardwoodFloors: false
+  pets: false
+  gasHeater: false
+  balcony: false
+  airConditioning: false
+  fireplace: false
+  patio: false
+  util_gas: false
+  util_water: false
+  util_electric: false
+  util_maid: false
+  util_trash: false
+  util_gardener: false
+  util_cable: false
+  util_internet: false
