@@ -1,0 +1,52 @@
+$baseFontFamily: Metrophobic;
+@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+
+/* Navbar elements 
+
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+
+*/
+
+/* Define navbarSearchBorder as background hero unit BG color */
+$navbarSearchBorder: #D1EAF3;
+
+/* Text elements */
+$bodyBackground: white;
+$textColor: black;
+
+
+/* Define navbarSearchBorder as background hero unit BG color */
+$navbarSearchBorder: #D1EAF3;
+
+@import 'bootstrap';
+body{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@import 'bootstrap-responsive';
+
+.navbar-inner{
+    @include box-shadow(none !important);
+    border: 0;
+}
+
+.navbar-fixed-bottom{
+	padding-bottom: 20px;
+}
+
+.hero-unit {
+    padding: 30px;
+    background-color: $navbarSearchBorder;
+}
+
+.alert {
+	color: $textColor;
+}
+
+/* change the color behind the "update" and "sign up" buttons for user accounts
+.form-actions {
+	background-color: $navbarSearchBorder;
+}
+ */
