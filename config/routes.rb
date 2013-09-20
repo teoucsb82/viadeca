@@ -1,5 +1,6 @@
 Viadeca::Application.routes.draw do
 
+  devise_for :users
 get 'home' => 'pages#home'
 get 'avail' => 'pages#avail'
 get 'contact' => 'pages#contact'
