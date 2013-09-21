@@ -8,7 +8,7 @@ gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'devise'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'paperclip', "~> 3.4.2", branch: 'rails-4'
-gem "aws-s3", :require => "aws/s3"
+gem "aws-s3"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
