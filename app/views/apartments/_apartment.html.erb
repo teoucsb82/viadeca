@@ -1,5 +1,6 @@
 <% if apartment.isAvailable == true || current_user == apartment.user %>
       <tr>
+        <td><%= image_tag apartment.image(:medium) %></td>
         <td><%= apartment.streetAddress %>, #<%= apartment.aptNumber %></td>
         <td><%= apartment.description %></td>
         <td><%= apartment.rent %></td>

@@ -1,7 +1,11 @@
 <%= simple_form_for(@apartment, html: {class: "form-horizontal"} ) do |f| %>
   <%= f.error_notification %>
+  <%= f.full_error :image_file_size, class: "alert alert-error" %>
+  <%= f.full_error :image_content_type, class: "alert alert-error" %>
+
   <div class="form-inputs">
-    <%= f.input :isAvailable, label: "Unit is currently available" %>
+    <%= f.input :image, label: "Upload image" %>
+    <%= f.input :isAvailable, as: :radio_buttons, label: "Unit is currently available" %>
     <%= f.input :streetAddress, label: "Street Address" %>
     <%= f.input :aptNumber, label: "Apt Number" %>
     <%= f.input :rent %>
@@ -15,7 +19,7 @@
     <%= f.input :washer, label: "Includes washer" %>
     <%= f.input :dryer, label: "Includes dryer" %>
     <%= f.input :refrigerator, label: "Includes refrigerator" %>
-    <%= f.input :microwave, label: "Includes stove" %>
+    <%= f.input :microwave, label: "Includes microwave" %>
     <%= f.input :dishwasher, label: "Includes dishwasher" %>
     <%= f.input :laundryOnSite, label: "Includes laundry on site" %>
     <%= f.input :hardwoodFloors, label: "Includes hardwood floors" %>

@@ -74,4 +74,9 @@ class ApartmentsController < ApplicationController
     def apartment_params
       params.require(:apartment).permit(:streetAddress, :aptNumber, :rent, :isAvailable, :description, :sqFootage, :beds, :baths, :parking, :stove, :washer, :drier, :refrigerator, :microwave, :dishwasher, :laundryOnSite, :hardwoodFloors, :pets, :gasHeater, :balcony, :airConditioning, :fireplace, :patio, :util_gas, :util_water, :util_electric, :util_maid, :util_trash, :util_gardener)
     end
+
+  def apartment_params
+   params.require(:apartment).permit(:description, :image)
+  end
+
 end

@@ -4,6 +4,7 @@
           <div class="well">
             <center>
               <h1><%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
+              <%= image_tag @apartment.image %>
               <% if @apartment.isAvailable == false %>
                 <%= link_to 'This unit is currently UNAVAILABLE and not listed. Click here to modify listing', edit_apartment_path(@apartment), class: "btn btn-danger btn-large" %>
               <% else %>
@@ -17,7 +18,7 @@
   <div class="row">
       <div class="span4">
           <div class="well">
-            <h2>Apartment Info</h2><hr>
+            <center><h2>Apartment Info</h2></center><hr>
            <p>
               <strong>Address: </strong><%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %>
             </p>
@@ -59,7 +60,7 @@
 
       <div class="span4">
           <div class="well">
-            <h2>Amenities</h2><hr>
+            <center><h2>Amenities</h2></center><hr>
               <strong>
                 <% if @apartment.stove == true %>
                   <p>
@@ -146,7 +147,7 @@
 
       <div class="span4">
           <div class="well">
-              <h2>Paid Utilities</h2>
+              <center><h2>Paid Utilities</h2></center>
               <hr>
               <strong>
                 <% if @apartment.util_gas == true %>
