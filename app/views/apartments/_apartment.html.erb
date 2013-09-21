@@ -1,0 +1,55 @@
+<% if apartment.isAvailable == true || current_user == apartment.user %>
+<hr>
+  <div class="row well">
+      <div class="span4">
+          <div>
+            <%= link_to image_tag(apartment.image(:medium)), apartment %>
+              <% if apartment.isAvailable == false %>
+                <br><%= link_to 'Listing Hidden From Public View', edit_apartment_path(apartment), class: "btn btn-danger btn-small" %>
+              <% end %>
+              <% if apartment.isAvailable == true && current_user == apartment.user %>
+                <br><button class="btn btn-success btn-small">Listing Visible To Public</button>
+              <% end %>
+          </div>
+      </div>
+
+      <div class="span6">
+            <div>
+              <p>
+                <h3 align="center">   
+                    <%= apartment.streetAddress %>, #<%= apartment.aptNumber %>
+                </h3>
+                <hr>
+              </p>
+
+              <p>
+                <strong>
+                    Description: 
+                </strong>
+                <%= apartment.description %><br>
+              </p>
+              
+                <%= apartment.beds %> bed, <%= apartment.baths %> bath<br>
+
+                <p>
+                    <strong>
+                        Rent: 
+                    </strong>
+                    $<%= apartment.rent %> per month.
+                </p>
+
+                    <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-large" %>
+                    <% if current_user == apartment.user %>
+                        
+                        <p><hr>
+                            <strong>Admin Tools: </strong>
+                            <%= link_to 'Edit Listing', edit_apartment_path(apartment), class: "btn btn-success btn-small" %>
+                            <%= link_to 'Delete Unit', apartment, method: :delete, data: { confirm: 'Are you sure you want to permanently remove this apartment from the database? You can always hide it ' }, class: "btn btn-danger btn-small" %>
+                        </p>
+                      
+                    <% end %>
+            </div>
+        </div>
+      </div>
+
+<% end %>
