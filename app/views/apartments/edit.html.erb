@@ -1,6 +1,3 @@
-<h1>Editing apartment</h1>
+<h1>Editing apartment - <%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @apartment, class: "btn btn-primary" %> |
-<%= link_to 'Back', apartments_path, class: "btn" %>

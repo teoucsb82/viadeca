@@ -194,6 +194,38 @@
 
   </div>
 
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+              <h1>Additional Photos</h1>
+              <p>
+                <% if @apartment.image2.exists? %>
+                  <%= link_to image_tag(@apartment.image2(:medium)), '#' %>
+                <% end %>
+                <% if @apartment.image3.exists? %>
+                  <%= link_to image_tag(@apartment.image3(:medium)), '#' %>
+                <% end %>
+                <% if @apartment.image4.exists? %>
+                  <%= link_to image_tag(@apartment.image4(:medium)), '#' %>
+                <% end %>
+                <% if @apartment.image5.exists? %>
+                  <%= link_to image_tag(@apartment.image5(:medium)), '#' %>
+                <% end %>
+                <% if @apartment.image6.exists? %>
+                  <%= link_to image_tag(@apartment.image6(:medium)), '#' %>
+                <% end %>
+                <% if @apartment.image7.exists? %>
+                  <%= link_to image_tag(@apartment.image7(:medium)), '#' %>
+                <% end %>
+              </p>            
+
+
+            </center>
+          </div>
+      </div>
+  </div>
+
 <% else %>
   <div class="row">
       <div class="span12">
