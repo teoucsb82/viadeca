@@ -4,6 +4,9 @@
       <div class="span4">
           <div>
             <%= link_to image_tag(apartment.image(:medium)), apartment %>
+              <% if apartment.isAvailable == false %>
+                <br><%= link_to 'Listing Hidden From Public View', edit_apartment_path(apartment), class: "btn btn-danger btn-small" %>
+              <% end %>
           </div>
       </div>
 
@@ -13,6 +16,7 @@
                 <h3 align="center">   
                     <%= apartment.streetAddress %>, #<%= apartment.aptNumber %>
                 </h3>
+                <hr>
               </p>
 
               <p>
@@ -32,12 +36,16 @@
                 </p>
 
                     <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-large" %>
-                
+                    <% if apartment.isAvailable == true %>
+                      <%= link_to 'Available Now!', apartment, class: "btn btn-success btn-large pull-right" %>
+                    <% end %>
                     <% if current_user == apartment.user %>
-                        <p>
+                        
+                        <p><hr>
                             <%= link_to 'Modify', edit_apartment_path(apartment), class: "btn btn-success btn-small" %>
                             <%= link_to 'Delete', apartment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %>
                         </p>
+                      
                     <% end %>
             </div>
         </div>
