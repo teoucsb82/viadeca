@@ -145,8 +145,8 @@
                   </p> 
                 <% end%>  
               </strong>
-  </div>
-  </div>
+        </div>
+      </div>
 
       <div class="span4">
           <div class="well">
@@ -213,7 +213,7 @@
             <% if current_user == @apartment.user %>
               <%= link_to 'Modify', edit_apartment_path(@apartment), class: "btn btn-success" %>
             <% end %>
-            <%= link_to 'Show All Availabilities', apartments_path, class: "btn btn-primary" %>
+            <%= link_to '<< Back To Availabilities', apartments_path, class: "btn btn-primary" %>
           </center>
         </div>
     </div>
