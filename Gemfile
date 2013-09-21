@@ -9,6 +9,7 @@ gem 'devise'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'paperclip', "~> 3.4.2", branch: 'rails-4'
 gem "aws-s3"
+gem "aws-sdk"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
