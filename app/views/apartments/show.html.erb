@@ -4,12 +4,15 @@
           <div class="well">
             <center>
               <h1><%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
-              <%= image_tag @apartment.image %>
+              <p>
+                <%= image_tag @apartment.image %>
+              </p>
               <% if @apartment.isAvailable == false %>
                 <%= link_to 'This unit is currently UNAVAILABLE and not listed. Click here to modify listing', edit_apartment_path(@apartment), class: "btn btn-danger btn-large" %>
               <% else %>
                 <%= link_to "Available Now! Click Here To Submit Application", "#", class: "btn btn-success btn-large" %>
               <% end %>
+
             </center>
           </div>
       </div>

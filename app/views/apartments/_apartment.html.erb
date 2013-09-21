@@ -1,16 +1,30 @@
 <% if apartment.isAvailable == true || current_user == apartment.user %>
-      <tr>
-        <td><%= image_tag apartment.image(:medium) %></td>
-        <td><%= apartment.streetAddress %>, #<%= apartment.aptNumber %></td>
-        <td><%= apartment.description %></td>
-        <td><%= apartment.rent %></td>
-        <td><%= apartment.beds %></td>
-        <td><%= apartment.baths %></td>
-        <td><%= apartment.isAvailable %></td>
-        <td><%= link_to 'Show info', apartment, class: "btn btn-primary btn-small" %></td>
-        <% if current_user == apartment.user %>
-            <td><%= link_to 'Modify', edit_apartment_path(apartment), class: "btn btn-success btn-small" %></td>
-            <td><%= link_to 'Delete', apartment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %></td>
-        <% end %>
-      </tr>
+    <div class="box">
+        <%= link_to image_tag(apartment.image(:medium)), apartment %>
+
+        <p>
+            <h3>   
+                <%= apartment.streetAddress %>, #<%= apartment.aptNumber %>
+            </h3>
+        </p>
+        
+        <%= apartment.beds %> bed, <%= apartment.baths %> bath<br>
+
+        <p>
+            <strong>
+                Rent: 
+            </strong>
+            $<%= apartment.rent %> per month.
+        </p>
+        <center>
+            <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-small" %>
+        
+            <% if current_user == apartment.user %>
+                <p>
+                    <%= link_to 'Modify', edit_apartment_path(apartment), class: "btn btn-success btn-small" %>
+                    <%= link_to 'Delete', apartment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %>
+                </p>
+            <% end %>
+        </center>
+    </div>
 <% end %>
