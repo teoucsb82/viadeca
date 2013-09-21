@@ -7,6 +7,9 @@
               <% if apartment.isAvailable == false %>
                 <br><%= link_to 'Listing Hidden From Public View', edit_apartment_path(apartment), class: "btn btn-danger btn-small" %>
               <% end %>
+              <% if apartment.isAvailable == true && current_user == apartment.user %>
+                <br><button class="btn btn-success btn-small">Listing Visible To Public</button>
+              <% end %>
           </div>
       </div>
 
@@ -36,14 +39,12 @@
                 </p>
 
                     <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-large" %>
-                    <% if apartment.isAvailable == true %>
-                      <%= link_to 'Available Now!', apartment, class: "btn btn-success btn-large pull-right" %>
-                    <% end %>
                     <% if current_user == apartment.user %>
                         
                         <p><hr>
-                            <%= link_to 'Modify', edit_apartment_path(apartment), class: "btn btn-success btn-small" %>
-                            <%= link_to 'Delete', apartment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %>
+                            <strong>Admin Tools: </strong>
+                            <%= link_to 'Edit Listing', edit_apartment_path(apartment), class: "btn btn-success btn-small" %>
+                            <%= link_to 'Delete Unit', apartment, method: :delete, data: { confirm: 'Are you sure you want to permanently remove this apartment from the database? You can always hide it ' }, class: "btn btn-danger btn-small" %>
                         </p>
                       
                     <% end %>
