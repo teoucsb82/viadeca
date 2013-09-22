@@ -16,6 +16,9 @@ class Inquiry
   
   validates :message,
             :length => { :minimum => 10, :maximum => 1000 }
+
+  validates :licensestate,
+            :length => { :minimum => 2, :maximum => 2 }                      
   
   def initialize(attributes = {})
     attributes.each do |name, value|

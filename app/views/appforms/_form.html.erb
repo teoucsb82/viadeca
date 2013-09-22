@@ -1,0 +1,76 @@
+<!-- app/views/inquiries/_form.html.erb -->
+ 
+<%= simple_form_for(appform, html: { class: 'form-horizontal'}) do |f| %>
+  <h1>Applicant Information</h1><hr>
+  <%= f.input :name %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :phone, label: "Phone Number", placeholder: "xxx-xxx-xxxx" %>
+  <%= f.input :dob, label: "Date of Birth", placeholder: "mm-dd-yy" %>
+  <%= f.input :ssn, label: "SSN", placeholder: "xxx-xx-xxxx" %>
+  <%= f.input :license, label: "Driver's License" %>
+  <%= f.input :licensestate, label: "State Issued" %>
+  
+  <h1>Current Rental History</h1><hr>
+  <%= f.input :current_address, label: "Current Address" %>
+  <%= f.input :current_unit, label: "Unit #" %>
+  <%= f.input :current_city, label: "City" %>
+  <%= f.input :current_state, label: "State" %>
+  <%= f.input :current_zip, label: "Zip" %>
+  <%= f.input :current_start_date, label: "From", placeholder: "MM/YY" %>
+  <%= f.input :current_end_date, label: "To", placeholder: "MM/YY" %>
+  <%= f.input :current_total_date, label: "How Long", placeholder: "Total years" %>
+  <%= f.input :current_rent, label: "Rent" %>
+  <%= f.input :current_manager, label: "Manager's Name" %>
+  <%= f.input :current_manager_phone, label: "Manager's Phone" %>
+  <%= f.input :current_reason, label: "Reason for leaving", as: :text, input_html: { rows: "4" } %>
+
+  <h1>Previous Rental History</h1><hr>
+  <%= f.input :previous_address, label: "Previous Address" %>
+  <%= f.input :previous_unit, label: "Unit #" %>
+  <%= f.input :previous_city, label: "City" %>
+  <%= f.input :previous_state, label: "State" %>
+  <%= f.input :previous_zip, label: "Zip" %>
+  <%= f.input :previous_start_date, label: "From", placeholder: "MM/YY" %>
+  <%= f.input :previous_end_date, label: "To", placeholder: "MM/YY" %>
+  <%= f.input :previous_total_date, label: "How Long", placeholder: "Total years/months" %>
+  <%= f.input :previous_rent, label: "Rent" %>
+  <%= f.input :previous_manager, label: "Manager's Name" %>
+  <%= f.input :previous_manager_phone, label: "Manager's Phone" %>
+  <%= f.input :previous_reason, label: "Reason for leaving", as: :text, input_html: { rows: "4" } %>
+  
+  <h1>Employment Information</h1><hr>
+  <%= f.input :employer, label: "Current Employer" %>
+  <%= f.input :employer_address, label: "Employer Address" %>
+  <%= f.input :employer_city, label: "City" %>
+  <%= f.input :employer_state, label: "State" %>
+  <%= f.input :employer_zip, label: "Zip" %>
+  <%= f.input :employer_start_date, label: "Start Date", placeholder: "MM/YY" %>
+  <%= f.input :employer_total_date, label: "How Long", placeholder: "Total years/months" %>
+  <%= f.input :employer_salary, label: "Annual Salary" %>  
+  <%= f.input :employer_title, label: "Job Title/Position" %>
+  <%= f.input :employer_supervisor, label: "Supervisor's Name" %>
+  <%= f.input :employer_supervisor_title, label: "Supervisor's Job Title/Position" %>
+  <%= f.input :employer_supervisor_phone, label: "Supervisor's Phone Number" %>
+  
+  <h1>Emergency Information</h1><hr>
+  <%= f.input :emergency_contact, label: "Emergency Contact Name" %>
+  <%= f.input :emergency_relationship, label: "Relationship" %>
+  <%= f.input :emergency_phone, label: "Emergency phone number" %>
+ 
+  <h1>Vehicle Information</h1><hr>
+  <%= f.input :vehicle_make, label: "Make", placeholder: "ex: Toyota" %>
+  <%= f.input :vehicle_model, label: "Model", placeholder: "ex: Prius" %>
+  <%= f.input :vehicle_color, label: "Color" %>
+  <%= f.input :vehicle_year, label: "Year" %>
+  <%= f.input :vehicle_license, label: "License Plate" %>
+  
+  
+  <hr>
+  <%= f.input :message, label: "Any additional information", as: :text, input_html: { rows: "6" }, placeholder: 'ex: Have a small dog, Applying with roommate (and names), etc' %>
+  
+
+    <div class="form-actions">
+      <%= f.submit "Submit Application", class: "btn btn-success btn-large" %>
+      <br><br><small>Your information will never be sold or traded.</small>
+    </div>
+<% end %>

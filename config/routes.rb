@@ -6,8 +6,13 @@ Viadeca::Application.routes.draw do
   get 'home' => 'pages#home'
   get 'avail' => 'apartments#index'
   get 'contact' => 'inquiries#new'
+  get 'apply' => 'appforms#new'
 
   resources :inquiries, :only => [:new, :create] do
+  get 'thank_you', :on => :collection
+end
+
+resources :appforms, :only => [:new, :create] do
   get 'thank_you', :on => :collection
 end
 
