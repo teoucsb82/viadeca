@@ -7,6 +7,11 @@
               <p>
                 <%= image_tag @apartment.image %>
               </p>
+
+              <p>
+                <strong>Description: </strong><%= @apartment.description %>
+              </p>
+              
               <% if @apartment.isAvailable == false %>
                 <%= link_to 'This unit is currently UNAVAILABLE and not listed. Click here to modify listing', edit_apartment_path(@apartment), class: "btn btn-danger btn-large" %>
               <% else %>
@@ -28,10 +33,6 @@
        
             <p>
               <strong>Rent: $</strong><%= @apartment.rent %>
-            </p>
-
-            <p>
-              <strong>Description: </strong><%= @apartment.description %>
             </p>
 
             <p>
@@ -193,38 +194,39 @@
       </div>
 
   </div>
+<% if @apartment.image2.exists? || @apartment.image3.exists? || @apartment.image4.exists? || @apartment.image5.exists? || @apartment.image6.exists? || @apartment.image7.exists? %>
+    <div class="row">
+        <div class="span12">
+            <div class="well">
+              <center>
+                <h1>Additional Photos</h1>
+                <p>
+                  <% if @apartment.image2.exists? %>
+                    <%= link_to image_tag(@apartment.image2(:medium)), '#' %>
+                  <% end %>
+                  <% if @apartment.image3.exists? %>
+                    <%= link_to image_tag(@apartment.image3(:medium)), '#' %>
+                  <% end %>
+                  <% if @apartment.image4.exists? %>
+                    <%= link_to image_tag(@apartment.image4(:medium)), '#' %>
+                  <% end %>
+                  <% if @apartment.image5.exists? %>
+                    <%= link_to image_tag(@apartment.image5(:medium)), '#' %>
+                  <% end %>
+                  <% if @apartment.image6.exists? %>
+                    <%= link_to image_tag(@apartment.image6(:medium)), '#' %>
+                  <% end %>
+                  <% if @apartment.image7.exists? %>
+                    <%= link_to image_tag(@apartment.image7(:medium)), '#' %>
+                  <% end %>
+                </p>            
 
-  <div class="row">
-      <div class="span12">
-          <div class="well">
-            <center>
-              <h1>Additional Photos</h1>
-              <p>
-                <% if @apartment.image2.exists? %>
-                  <%= link_to image_tag(@apartment.image2(:medium)), '#' %>
-                <% end %>
-                <% if @apartment.image3.exists? %>
-                  <%= link_to image_tag(@apartment.image3(:medium)), '#' %>
-                <% end %>
-                <% if @apartment.image4.exists? %>
-                  <%= link_to image_tag(@apartment.image4(:medium)), '#' %>
-                <% end %>
-                <% if @apartment.image5.exists? %>
-                  <%= link_to image_tag(@apartment.image5(:medium)), '#' %>
-                <% end %>
-                <% if @apartment.image6.exists? %>
-                  <%= link_to image_tag(@apartment.image6(:medium)), '#' %>
-                <% end %>
-                <% if @apartment.image7.exists? %>
-                  <%= link_to image_tag(@apartment.image7(:medium)), '#' %>
-                <% end %>
-              </p>            
 
-
-            </center>
-          </div>
-      </div>
-  </div>
+              </center>
+            </div>
+        </div>
+    </div>
+<% end %>
 
 <% else %>
   <div class="row">

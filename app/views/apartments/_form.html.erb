@@ -7,6 +7,8 @@
     <div class="row">
         <div class="span5">
             <div class="well">
+                <h2>Apartment Info</h2>
+                <hr>
                 <%= f.input :image, label: "Upload Primary Image (4mb max)" %>
                 <%= f.input :isAvailable, as: :radio_buttons, label: "Unit is currently available" %>
                 <%= f.input :streetAddress, label: "Street Address" %>
@@ -23,6 +25,7 @@
         <div class="span3">
             <div class="well">
                 <h2>Amenities</h2>
+                <hr>
                 <%= f.input :stove, label: "Includes stove" %>
                 <%= f.input :washer, label: "Includes washer" %>
                 <%= f.input :dryer, label: "Includes dryer" %>
@@ -43,6 +46,7 @@
         <div class="span3">
             <div class="well">
                 <h2>Paid Utilities</h2>
+                <hr>                
                 <%= f.input :util_gas, label: "Includes gas" %>
                 <%= f.input :util_water, label: "Includes water" %>
                 <%= f.input :util_electric, label: "Includes electricity" %>
@@ -58,7 +62,8 @@
     <div class="row">
         <div class="span5">
             <div class="well">
-                <h2>Additional Images</h2>
+                <h2>Additional Images <small>(optional)</small></h2>
+                <hr>                
                 <%= f.input :image2, label: "Upload additional image" %>
                 <%= f.input :image3, label: "Upload additional image" %>
                 <%= f.input :image4, label: "Upload additional image" %>
