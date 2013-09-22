@@ -10,6 +10,8 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'paperclip', "~> 3.4.2", branch: 'rails-4'
 gem "aws-s3"
 gem "aws-sdk"
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

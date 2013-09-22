@@ -1,5 +1,10 @@
-<h1>Available Apartments</h1>
+	<h1>
+		Available Apartments
+		<small class="pull-right">
+			<%= will_paginate @apartments %>
+		</small>
+	</h1>
 
-<div id="apartments">
-  <%= render @apartments %><br>
-</div>
+	<div id="apartments">
+	  <%= render @apartments %><br>
+	</div>
