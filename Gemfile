@@ -12,6 +12,7 @@ gem "aws-s3"
 gem "aws-sdk"
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem 'pony'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
