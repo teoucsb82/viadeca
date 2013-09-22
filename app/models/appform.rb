@@ -1,5 +1,4 @@
-# app/models/inquiry.rb
- 
+
 class Appform
   extend ActiveModel::Naming
   include ActiveModel::Conversion
@@ -12,7 +11,8 @@ class Appform
                 :employer, :employer_address, :employer_city, :employer_state, :employer_zip, :employer_start_date, :employer_total_date, :employer_salary, :employer_title, :employer_supervisor, :employer_supervisor_title, :employer_supervisor_phone,
                 :emergency_contact, :emergency_relationship, :emergency_phone,
                 :vehicle_make, :vehicle_model, :vehicle_color, :vehicle_year, :vehicle_license,
-                :message
+                :message,
+                :acknowledgment
                   
   
   validates :name, 
@@ -23,7 +23,25 @@ class Appform
    
   validates :licensestate,
             :length => { :maximum => 2 }  
+
+  validates :dob, 
+            :presence => true            
+
+  validates :phone, 
+            :presence => true            
+
+  validates :current_address, 
+            :presence => true            
   
+  validates :current_city, 
+            :presence => true  
+
+  validates :message, 
+            :presence => true              
+
+  validates :acknowledgment, presence: true
+
+
   def initialize(attributes = {})
     attributes.each do |name, value|
       send("#{name}=", value)
@@ -36,7 +54,8 @@ class Appform
       :from => %("#{name}" <#{email}>),
       :reply_to => email,
       :subject => "Application",
-      :body => message,
+      :body => message, 
+      :body => phone,
       :html_body => simple_format(message)
     })
   end

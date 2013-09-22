@@ -4,6 +4,7 @@
           <div class="well">
             <center>
               <h1><%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
+              <%= render 'apply' %>
               <p>
                 <%= image_tag @apartment.image %>
               </p>
@@ -11,12 +12,6 @@
               <p>
                 <strong>Description: </strong><%= @apartment.description %>
               </p>
-              
-              <% if @apartment.isAvailable == false %>
-                <%= link_to 'This unit is currently UNAVAILABLE and not listed. Click here to modify listing', edit_apartment_path(@apartment), class: "btn btn-danger btn-large" %>
-              <% else %>
-                <%= link_to "Available Now! Click Here To Submit Application", apply_path, class: "btn btn-success btn-large" %>
-              <% end %>
 
             </center>
           </div>
@@ -202,31 +197,39 @@
                 <h1>Additional Photos</h1>
                 <p>
                   <% if @apartment.image2.exists? %>
-                    <%= link_to image_tag(@apartment.image2(:medium)), '#' %>
+                    <%= link_to image_tag(@apartment.image2(:medium)), @apartment.image2(:original), :target => '_blank' %>
                   <% end %>
                   <% if @apartment.image3.exists? %>
-                    <%= link_to image_tag(@apartment.image3(:medium)), '#' %>
+                    <%= link_to image_tag(@apartment.image3(:medium)), @apartment.image3(:original), :target => '_blank' %>
                   <% end %>
                   <% if @apartment.image4.exists? %>
-                    <%= link_to image_tag(@apartment.image4(:medium)), '#' %>
+                    <%= link_to image_tag(@apartment.image4(:medium)), @apartment.image4(:original), :target => '_blank' %>
                   <% end %>
                   <% if @apartment.image5.exists? %>
-                    <%= link_to image_tag(@apartment.image5(:medium)), '#' %>
+                    <%= link_to image_tag(@apartment.image5(:medium)), @apartment.image5(:original), :target => '_blank' %>
                   <% end %>
                   <% if @apartment.image6.exists? %>
-                    <%= link_to image_tag(@apartment.image6(:medium)), '#' %>
+                    <%= link_to image_tag(@apartment.image6(:medium)), @apartment.image6(:original), :target => '_blank' %>
                   <% end %>
                   <% if @apartment.image7.exists? %>
-                    <%= link_to image_tag(@apartment.image7(:medium)), '#' %>
+                    <%= link_to image_tag(@apartment.image7(:medium)), @apartment.image7(:original), :target => '_blank' %>
                   <% end %>
                 </p>            
-
-
               </center>
             </div>
         </div>
     </div>
 <% end %>
+        <div class="row">
+          <div class="span12">
+            <div class="well">
+              <center>
+                <%= render 'apply' %>
+              </center>
+            </div>
+          </div>
+        </div>
+
 
 <% else %>
   <div class="row">

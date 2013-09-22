@@ -3,6 +3,7 @@ class Apartment < ActiveRecord::Base
 
 	validates :streetAddress, presence: true, length: { minimum: 5 }
 	validates :aptNumber, presence: true
+    validates_inclusion_of :isAvailable, :in => [true, false]
 	validates :rent, presence: true
 	validates :beds, presence: true
 	validates :baths, presence: true

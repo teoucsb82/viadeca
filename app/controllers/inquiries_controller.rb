@@ -1,5 +1,3 @@
-# app/controllers/inquiries_controller.rb
- 
 class InquiriesController < ApplicationController
   
   def new

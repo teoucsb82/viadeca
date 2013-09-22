@@ -1,0 +1,7 @@
+<p>
+	<% if @apartment.isAvailable == false %>
+	  <%= link_to 'This unit is currently UNAVAILABLE and not listed. Click here to modify listing', edit_apartment_path(@apartment), class: "btn btn-danger btn-large" %>
+	<% else %>
+	  <%= link_to "Available Now! Click Here To Submit Application", apply_path, class: "btn btn-success btn-large" %>
+	<% end %>
+</p>

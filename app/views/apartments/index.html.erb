@@ -1,7 +1,9 @@
 <h1>
 	Available Apartments
 </h1>
-
+<small class="pull-left">
+	<%= will_paginate @apartments %>
+</small>
 <div id="apartments">
   <%= render @apartments %><br>
 </div>

@@ -1,6 +1,3 @@
-
-# app/controllers/appforms_controller.rb
- 
 class AppformsController < ApplicationController
   
   def new
