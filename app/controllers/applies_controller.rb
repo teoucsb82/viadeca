@@ -1,5 +1,5 @@
 class AppliesController < ApplicationController
-  before_action :set_apply, only: [:show, :edit, :update, :destroy]
+  before_action :set_apply, only: [:show, :update, :destroy]
 
   # GET /applies
   # GET /applies.json
