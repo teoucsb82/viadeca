@@ -1,5 +1,5 @@
 class AppliesController < ApplicationController
-  before_action :set_apply, only: [:show, :update, :destroy]
+  before_action :set_apply, only: [:show, :edit, :update, :destroy]
 
   # GET /applies
   # GET /applies.json
@@ -29,7 +29,7 @@ class AppliesController < ApplicationController
     respond_to do |format|
       if @apply.save
         ApplyMailer.registration_confirmation(@apply).deliver
-        format.html { redirect_to @apply, notice: 'Apply was successfully created.' }
+        format.html { redirect_to @apply, notice: 'Success!' }
         format.json { render action: 'show', status: :created, location: @apply }
       else
         format.html { render action: 'new' }
