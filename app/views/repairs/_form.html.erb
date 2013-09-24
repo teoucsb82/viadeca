@@ -1,15 +1,13 @@
-<%= simple_form_for(@repair) do |f| %>
+<%= simple_form_for((@repair), html: { class: 'form-horizontal'}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :description %>
+    <%= f.input :description, as: :text, label: "Service requested:", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
     <%= f.input :location_address %>
-    <%= f.input :phn %>
-    <%= f.input :repair_details %>
-    <%= f.input :status %>
+    <%= f.input :phn, label: "Contact #", placeholder: "xxx-xxx-xxxx" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Create Repair Request", class: "btn btn-success btn-large" %>
   </div>
 <% end %>

@@ -1,4 +1,12 @@
+<p>Your repair request #<strong><%= @user.id %></strong> has been submitted and we will be in touch soon!</p>
+<p>
+	<%= link_to "Click here", repair_url(@user) %> to view the status of your 
+</p> 
+<hr>
 
-
-<p>Thank you for submitting your repair to: we will be in touch soon!</p>
-
+<p>
+	<strong>Ticket# </strong><%= @user.id %><br>
+	<strong>Description: </strong><%= @user.description %><br>
+	<strong>Created: </strong><%= @user.created_at %><br>
+	<strong>Location: </strong><%= @user.location_address %><br>
+</p>

@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<h1>Repair Center</h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @repair.description %>
-</p>
+<% if current_user == @repair.user %>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+              <h1>Ticket # <%= @repair.id %></h1>
+            </center>
+          </div>
+      </div>
+  </div>
 
-<p>
-  <strong>Location address:</strong>
-  <%= @repair.location_address %>
-</p>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <h3>Created by: <%= current_user.name %></h1>
+          </div>
+      </div>
+  </div>
 
-<p>
-  <strong>Phn:</strong>
-  <%= @repair.phn %>
-</p>
-
-<p>
-  <strong>Repair details:</strong>
-  <%= @repair.repair_details %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @repair.status %>
-</p>
+<% else %>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This isn't your ticket!</h1>
+            </center>
+          </div>
+      </div>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_repair_path(@repair) %> |
 <%= link_to 'Back', repairs_path %>

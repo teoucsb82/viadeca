@@ -4,7 +4,7 @@ class RepairsMailer < ActionMailer::Base
   
   def registration_confirmation(user)
     @user = user
-    mail(:to => "teo.dellamico@gmail.com", :subject => "Repair request submitted!")
+    mail(:to => user.email, :subject => "Repair request submitted!")
   end
 end
 

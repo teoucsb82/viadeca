@@ -1,4 +1,5 @@
 class RepairsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_repair, only: [:show, :edit, :update, :destroy]
 
   # GET /repairs
@@ -14,17 +15,20 @@ class RepairsController < ApplicationController
 
   # GET /repairs/new
   def new
-    @repair = Repair.new
+    @repair = current_user.repairs.new
+    @repair.status = 1
   end
 
   # GET /repairs/1/edit
   def edit
+    @repair = current_user.repairs.find(params[:id])
   end
 
   # POST /repairs
   # POST /repairs.json
   def create
-    @repair = Repair.new(repair_params)
+    @repair = current_user.repairs.new(repair_params)
+    @repair.status = 1
 
     respond_to do |format|
       if @repair.save
