@@ -1,5 +1,7 @@
 Viadeca::Application.routes.draw do
 
+  resources :repairs
+
   resources :applies
 
   resources :apartments
@@ -9,6 +11,7 @@ Viadeca::Application.routes.draw do
   get 'avail' => 'apartments#index'
   get 'contact' => 'inquiries#new'
   get 'apply' => 'applies#new'
+  get 'repairs' => 'repairs#index'
 
   resources :inquiries, :only => [:new, :create] do
   get 'thank_you', :on => :collection

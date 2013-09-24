@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  location_address: MyString
+  phn: MyString
+  repair_details: MyString
+  status: 1
+
+two:
+  description: MyString
+  location_address: MyString
+  phn: MyString
+  repair_details: MyString
+  status: 1

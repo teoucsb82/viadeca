@@ -1,0 +1,24 @@
+<h1>Repair Center</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Location address</th>
+      <th>Phn</th>
+      <th>Repair details</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @repairs %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Repair', new_repair_path %>

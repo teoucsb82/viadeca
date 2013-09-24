@@ -17,9 +17,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Repair Center 
                                 <b class="caret"></b>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><%= link_to "New Repair Request", '#' %></li>
-                                <li><%= link_to "View Pending Repairs", '#' %></li>
+                            <ul class="dropdown-menu">                                
+                                <li><%= link_to "View Existing Repairs", repairs_path %></li>
+                                <li><%= link_to "New Repair Request", new_repair_path %></li>
                             </ul>
                         </li>
                     <% end %>

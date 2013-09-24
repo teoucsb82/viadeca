@@ -1,0 +1,11 @@
+
+  <tr>
+    <td><%= repair.description %></td>
+    <td><%= repair.location_address %></td>
+    <td><%= repair.phn %></td>
+    <td><%= repair.repair_details %></td>
+    <td><%= repair.status %></td>
+    <td><%= link_to 'Show', repair %></td>
+    <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
+    <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
