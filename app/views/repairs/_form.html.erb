@@ -8,10 +8,9 @@
             <h3>New Repair Request Form</h3>
             <hr>
             <div class="well">
-            	<%= f.input :location_address, label: "Address" %>
-			    <%= f.input :description, as: :text, label: "Service requested", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
-			    
-			    <%= f.input :phn, label: "Contact #", placeholder: "xxx-xxx-xxxx" %>
+              <%= f.input :description, as: :text, label: "Service requested", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
+            	<%= f.input :location_address, label: "Service address", :input_html => { :value => current_user.address } %>
+    			    <%= f.input :phn, label: "Email Address", :input_html => { :value => current_user.email } %>
             </div>
         </div>
     </div>
