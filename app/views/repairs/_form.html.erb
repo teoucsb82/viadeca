@@ -2,9 +2,20 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :description, as: :text, label: "Service requested:", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
-    <%= f.input :location_address %>
-    <%= f.input :phn, label: "Contact #", placeholder: "xxx-xxx-xxxx" %>
+   
+    <div class="row">
+        <div class="span12">
+            <h3>New Repair Request Form</h3>
+            <hr>
+            <div class="well">
+            	<%= f.input :location_address, label: "Address" %>
+			    <%= f.input :description, as: :text, label: "Service requested", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
+			    
+			    <%= f.input :phn, label: "Contact #", placeholder: "xxx-xxx-xxxx" %>
+            </div>
+        </div>
+    </div>
+
   </div>
 
   <div class="form-actions">

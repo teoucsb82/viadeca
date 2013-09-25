@@ -6,6 +6,7 @@ class RepairsController < ApplicationController
   # GET /repairs.json
   def index
     @repairs = Repair.all
+    @repairs = Repair.order("created_at desc")
   end
 
   # GET /repairs/1
@@ -17,6 +18,7 @@ class RepairsController < ApplicationController
   def new
     @repair = current_user.repairs.new
     @repair.status = 1
+    @repair.repair_details = "This ticket has been submitted and will be processed in the order it was received."
   end
 
   # GET /repairs/1/edit
@@ -29,6 +31,7 @@ class RepairsController < ApplicationController
   def create
     @repair = current_user.repairs.new(repair_params)
     @repair.status = 1
+    @repair.repair_details = "This ticket has been submitted and will be processed in the order it was received."
 
     respond_to do |format|
       if @repair.save

@@ -3,8 +3,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th width="10%">Ticket #</th>
+      <th width="10%">View Ticket #</th>
       <th>Description</th>
+      <th width="10%">Created</th>
       <th width="10%">Status</th>
       <th width="10%"></th>
     </tr>
@@ -17,4 +18,12 @@
 
 <br>
 
-<%= link_to 'New Repair', new_repair_path %>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <%= link_to 'Create New Repair Request', new_repair_path, class: "btn btn-primary btn-large" %>
+            </center>
+          </div>
+      </div>
+  </div>

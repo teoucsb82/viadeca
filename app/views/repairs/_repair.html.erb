@@ -1,19 +1,21 @@
 <% if current_user == repair.user %>
   <tr>
-    <td><%= link_to repair.id, repair, class: "btn btn-primary" %></td>
+    <td><%= link_to "Ticket " + "#{repair.id}", repair, class: "btn btn-link" %></td>
     <td><%= repair.description %></td>
+    <td><%= repair.created_at.strftime("%b. %d, %Y") %> <%= repair.created_at.strftime("%H:%M") %></td>
     <!--Repair Status conditional -->
     <% if repair.status == 1 %>
-        <td><button class="btn btn-success">New Ticket</td>
+        <td><%= link_to "Received!", repair, class: "btn btn-success" %></td>
     <% elsif repair.status == 2 %>
-        <td><button class="btn btn-warning">In Progress</td>
+        <td><%= link_to "In Progress", repair, class: "btn btn-warning" %></td>
     <% else %>
-        <td><button class="btn btn-inverse">Closed</td>
+        <td><%= link_to "Closed", repair, class: "btn btn-inverse" %></td>
     <% end %>
+
     <td>
         <% if current_user == repair.user %>
             <!-- <td><%= link_to 'Edit Ticket', edit_repair_path(repair), class: "btn btn-success" %></td> -->
-            <%= link_to 'Cancel Ticket', repair, method: :delete, data: { confirm: 'Are you sure you want to cancel this ticket?' }, class: "btn btn-danger btn-mini" %>
+            <%= link_to 'Cancel Ticket', repair, method: :delete, data: { confirm: 'Are you sure you want to cancel this ticket?' }, class: "btn btn-danger btn-small" %>
         <% end %>
     </td>
   </tr>

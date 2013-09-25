@@ -14,10 +14,40 @@
   <div class="row">
       <div class="span12">
           <div class="well">
-            <h3>Created by: <%= current_user.name %></h1>
+            <p>
+              <strong>Status: </strong>
+              <% if @repair.status == 1 %>
+                  <td><button class="btn btn-success btn-mini">Received</button></td>
+              <% elsif @repair.status == 2 %>
+                  <td><button class="btn btn-warning">In Progress</button></td>
+              <% else %>
+                  <td><button class="btn btn-inverse">Closed</button><br>
+                    This ticket has been locked and closed.</td>
+              <% end %>
+            </p>
+            <p>
+              <strong>Description: </strong><%= @repair.description %>
+            </p>
+            <p>
+              <strong>Created at: </strong><%= @repair.created_at.strftime("%b. %d, %Y") %> <%= @repair.created_at.strftime("%H:%M") %>
+            </p>
+            <p>
+              <strong>Submitted by: </strong><%= current_user.name %>
+            </p>                          
           </div>
       </div>
   </div>
+
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <p>
+              <h3>Repair Update</h3><hr>
+              <%= @repair.repair_details %>
+            </p>                          
+          </div>
+      </div>
+  </div>  
 
 <% else %>
   <div class="row">
@@ -31,5 +61,13 @@
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_repair_path(@repair) %> |
-<%= link_to 'Back', repairs_path %>
+<div class="row">
+    <div class="span12">
+        <div class="well">
+          <center>
+            <%= link_to '<< Back To Existing Repairs', repairs_path, class: "btn btn-primary" %>
+          </center>
+        </div>
+    </div>
+</div>
+
