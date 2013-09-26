@@ -1,4 +1,4 @@
-<% if apartment.isAvailable == true || current_user == apartment.user %>
+<% if apartment.isAvailable == true || current_user.id == 7 || current_user.id == 11  %>
 <hr>
   <div class="row well">
       <div class="span4">
@@ -7,7 +7,7 @@
               <% if apartment.isAvailable == false %>
                 <br><%= link_to 'Listing Hidden From Public View', edit_apartment_path(apartment), class: "btn btn-danger btn-small" %>
               <% end %>
-              <% if apartment.isAvailable == true && current_user == apartment.user %>
+              <% if apartment.isAvailable == true && (current_user.id == 7 || current_user.id == 11) %>
                 <br><button class="btn btn-success btn-small">Listing Visible To Public</button>
               <% end %>
           </div>

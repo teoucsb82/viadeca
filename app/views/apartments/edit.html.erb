@@ -1,3 +1,17 @@
-<h1>Editing apartment - <%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
+<% if current_user.id == 7 || current_user.id == 11 %>
 
-<%= render 'form' %>
+	<h1>Editing apartment - <%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
+
+	<%= render 'form' %>
+
+<% else %>
+  <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This unit is currently unavailable</h1>
+            </center>
+          </div>
+      </div>
+  </div>
+<% end %>
