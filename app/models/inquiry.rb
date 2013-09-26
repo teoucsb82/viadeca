@@ -30,7 +30,7 @@ class Inquiry
     Pony.mail({
       :from => %("#{name}" <#{email}>),
       :reply_to => email,
-      :subject => "Website Inquiry",
+      :subject => "Via Deca - Contact Us submission",
       :body => message,
       :html_body => simple_format(message)
     })

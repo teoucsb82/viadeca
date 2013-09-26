@@ -4,6 +4,6 @@ class ApplyMailer < ActionMailer::Base
   
   def registration_confirmation(user)
     @user = user
-    mail(:to => user.email, :subject => "Application Received!")
+    mail(:to => user.email, :subject => "Via Deca LLC - Application Received!")
   end
 end

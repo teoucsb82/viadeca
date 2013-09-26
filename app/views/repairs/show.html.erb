@@ -1,6 +1,6 @@
 <h1>Repair Center</h1>
 
-<% if current_user == @repair.user %>
+<% if current_user == @repair.user || current_user.id == 7 %>
   <div class="row">
       <div class="span12">
           <div class="well">
@@ -26,13 +26,16 @@
               <% end %>
             </p>
             <p>
+              <strong>Location: </strong><%= @repair.location_address %>
+            </p>
+            <p>
               <strong>Description: </strong><%= @repair.description %>
             </p>
             <p>
               <strong>Created at: </strong><%= @repair.created_at.strftime("%b. %d, %Y") %> <%= @repair.created_at.strftime("%H:%M") %>
             </p>
             <p>
-              <strong>Submitted by: </strong><%= current_user.name %>
+              <strong>Submitted by: </strong><%= @repair.user.name %>
             </p>                          
           </div>
       </div>

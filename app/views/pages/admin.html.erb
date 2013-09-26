@@ -1,0 +1,53 @@
+<% unless current_user.id == 7 %>
+	<div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This page doesn't exist!</h1>
+            </center>
+          </div>
+      </div>
+    </div>
+<% else %>
+		<div class="row">
+	      <div class="span12">
+	          <div class="well">
+	          	<center>
+		            <h1>Admin Control Panel</h1>
+		        </center>
+	          </div>
+	      </div>
+	    </div>
+		
+		<div class="row">
+	    	<div class="span4">
+          		<div class="well">
+           			<center><h2>Apartment Management</h2><hr>
+           			<p><%= link_to "View Apartment Database", apartments_path, class: "btn btn-primary" %></p>
+           			<p><%= link_to "Add Apartment to Database", new_apartment_path, class: "btn btn-success" %></p>   
+           			</center>   
+        		</div>
+     		</div>
+
+	    	<div class="span4">
+          		<div class="well">
+           			<center><h2>Repair Request Management</h2><hr>
+           			<p><%= link_to "View All Repair Tickets", repairs_path, class: "btn btn-primary" %></p>
+           			</center>         
+        		</div>
+     		</div>
+
+	    	<div class="span4">
+          		<div class="well">
+           			<center><h2>Receipts and Invoices</h2><hr>
+                <p><%= link_to "Placeholder to Receipts", '#', class: "btn btn-primary" %></p>
+                <p><%= link_to "Placeholder to Invoices", '#', class: "btn btn-success" %></p>
+                </center>
+        		  </div>
+     		</div>
+
+     	</div>
+
+
+
+<% end %>

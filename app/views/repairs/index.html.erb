@@ -1,11 +1,11 @@
 <h1>Repair Center</h1>
-
 <table class="table table-striped">
   <thead>
     <tr>
-      <th width="10%">View Ticket #</th>
+      <th width="10%">Ticket #</th>
       <th>Description</th>
-      <th width="10%">Created</th>
+      <th width="10%">Created by</th>
+      <th width="10%">Created at</th>
       <th width="10%">Status</th>
       <th width="10%"></th>
     </tr>
@@ -15,7 +15,9 @@
     <%= render @repairs %>
   </tbody>
 </table>
-
+<small class="pull-left">
+<%= will_paginate @repairs %>
+</small>
 <br>
 
   <div class="row">

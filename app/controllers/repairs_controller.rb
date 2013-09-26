@@ -5,8 +5,7 @@ class RepairsController < ApplicationController
   # GET /repairs
   # GET /repairs.json
   def index
-    @repairs = Repair.all
-    @repairs = Repair.order("created_at desc")
+    @repairs = Repair.order("created_at desc").page(params[:page]).per_page(10)
   end
 
   # GET /repairs/1
