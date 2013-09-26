@@ -7,7 +7,7 @@
         <div class="span6">
             <h3>Personal Information</h3><hr>
             <div class="well">
-                <%= f.input :aptaddress, label: "Applying for unit" %>
+                <%= f.input :aptaddress, label: "Applying for unit", :input_html => { :value => Apartment.last.streetAddress + ", Apt# " + Apartment.last.aptNumber } %>
                 <%= f.input :name %>
                 <%= f.input :email %>
                 <%= f.input :phone, placeholder: "xxx-xxx-xxxx" %>
