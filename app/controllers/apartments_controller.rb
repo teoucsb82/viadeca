@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show, :edit]
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
 
   # GET /apartments
