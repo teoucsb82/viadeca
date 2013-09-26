@@ -39,7 +39,7 @@
                 </p>
 
                     <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-large" %>
-                    <% if current_user == apartment.user %>
+                    <% if current_user.id == 7 || current_user.id == 11 %>
                         
                         <p><hr>
                             <strong>Admin Tools: </strong>

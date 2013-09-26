@@ -34,7 +34,7 @@
                         <!--
                         <li><%= link_to 'Add Unit+', new_apartment_path %></li>
                         -->
-                        <% if current_user.id == 7 %>
+                        <% if current_user.id == 7 || current_user.id == 11 %>
                             <li><%= link_to 'Admin Control Panel',  admin_path %></li>
                         <% end %>
                         <li class="dropdown">
