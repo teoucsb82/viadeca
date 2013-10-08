@@ -1,10 +1,12 @@
+<% provide(:title, 'Admin Control Panel') %>
+
 <% if current_user.admin? %>
 
 		<div class="row">
 	      <div class="span12">
 	          <div class="well">
 	          	<center>
-		            <h1>Admin Control Panel</h1>
+		            <h1><%= yield(:title) %></h1>
 		        </center>
 	          </div>
 	      </div>

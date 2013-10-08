@@ -27,7 +27,7 @@
 
 <p>
   <strong>Purchased for:</strong>
-  <%= @receipt.purchased_for %>
+  <%= Apartment.find(@receipt.purchased_for).description %>
 </p>
 
 <p>

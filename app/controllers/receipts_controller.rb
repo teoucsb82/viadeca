@@ -1,10 +1,15 @@
 class ReceiptsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_receipt, only: [:show, :edit, :update, :destroy]
 
   # GET /receipts
   # GET /receipts.json
   def index
-    @receipts = Receipt.all
+    if current_user.admin?
+      @receipts = Receipt.all
+    else
+      @receipts = current_user.receipts.all
+    end
   end
 
   # GET /receipts/1
@@ -14,17 +19,18 @@ class ReceiptsController < ApplicationController
 
   # GET /receipts/new
   def new
-    @receipt = Receipt.new
+    @receipt = current_user.receipts.new
   end
 
   # GET /receipts/1/edit
   def edit
+    @receipt = current_user.receipts.find(params[:id])
   end
 
   # POST /receipts
   # POST /receipts.json
   def create
-    @receipt = Receipt.new(receipt_params)
+    @receipt = current_user.receipts.new(receipt_params)
 
     respond_to do |format|
       if @receipt.save
@@ -40,6 +46,7 @@ class ReceiptsController < ApplicationController
   # PATCH/PUT /receipts/1
   # PATCH/PUT /receipts/1.json
   def update
+    @receipt = current_user.receipts.find(params[:id])
     respond_to do |format|
       if @receipt.update(receipt_params)
         format.html { redirect_to @receipt, notice: 'Receipt was successfully updated.' }
@@ -54,6 +61,7 @@ class ReceiptsController < ApplicationController
   # DELETE /receipts/1
   # DELETE /receipts/1.json
   def destroy
+    @receipt = current_user.receipts.find(params[:id])
     @receipt.destroy
     respond_to do |format|
       format.html { redirect_to receipts_url }

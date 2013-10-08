@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
 	has_many :apartments, :dependent => :destroy
 	has_many :repairs, :dependent => :destroy
+	has_many :receipts, :dependent => :destroy
 
 	validates :address, presence: true
 

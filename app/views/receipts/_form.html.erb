@@ -9,7 +9,8 @@
     <%= f.input :day %>
     <%= f.input :year %>
     <%= f.input :description %>
-    <%= f.input :purchased_for %>
+    <%= f.input :purchased_for, :include_blank => "--Select Payment Method--",
+      collection: Apartment.all %>
     <%= f.input :price %>
     <%= f.input :payment_method, :include_blank => "--Select Payment Method--",
       collection: Receipt::PAYMENT.sort %>
