@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  store: MyString
+  month: 1
+  day: 1
+  year: 1
+  description: MyText
+  purchased_for: MyString
+  price: 1.5
+  payment_method: MyString
+
+two:
+  store: MyString
+  month: 1
+  day: 1
+  year: 1
+  description: MyText
+  purchased_for: MyString
+  price: 1.5
+  payment_method: MyString

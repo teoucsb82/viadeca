@@ -1,4 +1,4 @@
-<% if current_user.id == 7 || current_user.id == 11 %>
+<% if current_user.admin? %>
 	<h1>New apartment</h1>
 
 	<%= render 'form' %>
@@ -8,9 +8,10 @@
       <div class="span12">
           <div class="well">
             <center>
-            <h1>Oops! This unit is currently unavailable</h1>
+            <h1>Oops! This page isn't for you!</h1>
             </center>
           </div>
       </div>
   </div>
+  <%= render 'back' %>
 <% end %>

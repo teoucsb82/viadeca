@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925163300) do
+ActiveRecord::Schema.define(version: 20131008211715) do
+
+  create_table "admins", force: true do |t|
+    t.string   "email",              default: "", null: false
+    t.string   "encrypted_password", default: "", null: false
+    t.integer  "sign_in_count",      default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.integer  "failed_attempts",    default: 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "apartments", force: true do |t|
     t.string   "streetAddress"
@@ -152,6 +167,19 @@ ActiveRecord::Schema.define(version: 20130925163300) do
     t.datetime "updated_at"
   end
 
+  create_table "receipts", force: true do |t|
+    t.string   "store"
+    t.integer  "month"
+    t.integer  "day"
+    t.integer  "year"
+    t.text     "description"
+    t.string   "purchased_for"
+    t.float    "price"
+    t.string   "payment_method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "repairs", force: true do |t|
     t.string   "description"
     t.string   "location_address"
@@ -167,12 +195,12 @@ ActiveRecord::Schema.define(version: 20130925163300) do
   add_index "repairs", ["user_id"], name: "index_repairs_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -182,6 +210,7 @@ ActiveRecord::Schema.define(version: 20130925163300) do
     t.string   "name"
     t.string   "phone"
     t.string   "address"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

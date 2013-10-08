@@ -1,14 +1,5 @@
-<% unless current_user.id == 7 || current_user.id == 11 %>
-	<div class="row">
-      <div class="span12">
-          <div class="well">
-            <center>
-            <h1>Oops! This page doesn't exist!</h1>
-            </center>
-          </div>
-      </div>
-    </div>
-<% else %>
+<% if current_user.admin? %>
+
 		<div class="row">
 	      <div class="span12">
 	          <div class="well">
@@ -39,9 +30,8 @@
 
 	    	<div class="span4">
           		<div class="well">
-           			<center><h2>Receipts and Invoices</h2><hr>
-                <p><%= link_to "Receipts Coming Soon", '#', class: "btn btn-primary" %></p>
-                <p><%= link_to "Invoices Coming Soon", '#', class: "btn btn-success" %></p>
+           			<center><h2>Receipts</h2><hr>
+                <p><%= link_to "Receipts", receipts_path, class: "btn btn-primary" %></p>
                 </center>
         		  </div>
      		</div>
@@ -58,5 +48,17 @@
             </div>
         </div>
       </div>
+      
+<% else %>
+
+        <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This page doesn't exist!</h1>
+            </center>
+          </div>
+      </div>
+    </div>
 
 <% end %>

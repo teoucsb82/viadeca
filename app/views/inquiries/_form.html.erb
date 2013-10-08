@@ -4,7 +4,7 @@
  
   <%= f.input :name %>
   <%= f.input :email, placeholder: 'user@domain.com' %>
-  <%= f.input :message, as: :text, input_html: { rows: "6" }, placeholder: '1000 char max' %>
+  <%= f.input :message, as: :text, input_html: { rows: "6", :class => "span10"}, placeholder: '1000 char max' %>
   
     <div class="form-actions">
       <%= f.submit "Send Message", class: "btn btn-success btn-large" %>

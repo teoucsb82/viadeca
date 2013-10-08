@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @receipt.store %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @receipt.month %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @receipt.day %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @receipt.year %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @receipt.description %>
+</p>
+
+<p>
+  <strong>Purchased for:</strong>
+  <%= @receipt.purchased_for %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @receipt.price %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @receipt.payment_method %>
+</p>
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

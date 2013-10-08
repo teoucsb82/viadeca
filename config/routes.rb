@@ -1,5 +1,7 @@
 Viadeca::Application.routes.draw do
 
+  resources :receipts
+
   resources :repairs
 
   resources :applies

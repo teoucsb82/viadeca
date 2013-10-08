@@ -5,7 +5,11 @@ class RepairsController < ApplicationController
   # GET /repairs
   # GET /repairs.json
   def index
-    @repairs = Repair.order("created_at desc").page(params[:page]).per_page(10)
+    if current_user.admin?
+      @repairs = Repair.order("created_at desc").page(params[:page]).per_page(10)
+    else
+      @repairs = current_user.repairs.order("created_at desc").page(params[:page]).per_page(10)
+    end
   end
 
   # GET /repairs/1
@@ -22,7 +26,11 @@ class RepairsController < ApplicationController
 
   # GET /repairs/1/edit
   def edit
-    @repair = current_user.repairs.find(params[:id])
+    if current_user.admin?
+      @repair = Repair.last
+    else
+      @repair = current_user.repairs.find(params[:id])
+    end
   end
 
   # POST /repairs

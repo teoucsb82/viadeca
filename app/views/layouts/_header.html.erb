@@ -34,11 +34,11 @@
                         <!--
                         <li><%= link_to 'Add Unit+', new_apartment_path %></li>
                         -->
-                        <% if current_user.id == 7 || current_user.id == 11 %>
+                        <% if current_user.admin? %>
                             <li><%= link_to 'Admin Control Panel',  admin_path %></li>
                         <% end %>
                         <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account 
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %>
                              <b class="caret"></b>
                           </a>
                             <ul class="dropdown-menu">

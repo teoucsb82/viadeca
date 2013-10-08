@@ -1,4 +1,6 @@
-<h1>Available Apartments</h1>
+<% provide(:title, 'Availabilities') %>
+
+<h1><%= yield(:title) %></h1>
 <small class="pull-left">
 	<%= will_paginate @apartments %>
 </small>

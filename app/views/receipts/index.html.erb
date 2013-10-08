@@ -1,0 +1,28 @@
+<% provide(:title, 'Receipts') %>
+
+<h1><%= yield(:title) %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Month</th>
+      <th>Day</th>
+      <th>Year</th>
+      <th>Description</th>
+      <th>Purchased for</th>
+      <th>Price</th>
+      <th>Payment method</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @receipts %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receipt', new_receipt_path %>
