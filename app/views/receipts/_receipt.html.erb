@@ -3,10 +3,14 @@
     <td><%= receipt.month %>/<%= receipt.day %>/<%= receipt.year %></td>
     <td><%= receipt.store %></td>
     <td width="30%"><%= receipt.description %></td>
-    <td><%= Apartment.find(receipt.purchased_for).description %></td>
-    <td>$<%= receipt.price %></td>
+    <td><%= number_to_currency(receipt.price) %></td>
     <td><%= receipt.payment_method %></td>
-    <td><%= link_to 'Show', receipt %></td>
-    <td><%= link_to 'Edit', edit_receipt_path(receipt) %></td>
-    <td><%= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'View Receipt', receipt, class: "btn btn-primary" %></td>
+    <% if current_user == receipt.user %>
+	    <td><%= link_to 'Edit', edit_receipt_path(receipt), class: "btn btn-success"  %></td>
+	    <td><%= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %></td>
+    <% else %>
+    	<td></td>
+    	<td></td>
+	<% end %>
 </tr>

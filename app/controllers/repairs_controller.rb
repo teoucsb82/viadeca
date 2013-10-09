@@ -6,9 +6,9 @@ class RepairsController < ApplicationController
   # GET /repairs.json
   def index
     if current_user.admin?
-      @repairs = Repair.order("created_at desc").page(params[:page]).per_page(10)
+      @repairs = Repair.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(10)
     else
-      @repairs = current_user.repairs.order("created_at desc").page(params[:page]).per_page(10)
+      @repairs = current_user.repairs.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(10)
     end
   end
 
@@ -85,5 +85,13 @@ class RepairsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def repair_params
       params.require(:repair).permit(:description, :location_address, :phn, :repair_details, :status)
+    end
+
+    def sort_column
+      params[:sort] || "id"
+    end
+    
+    def sort_direction
+      params[:direction] || "desc"
     end
 end

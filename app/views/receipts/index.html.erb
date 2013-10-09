@@ -1,26 +1,42 @@
 <% provide(:title, 'Receipts') %>
 
-<h1><%= yield(:title) %></h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Store</th>
-      <th>Description</th>
-      <th>Unit</th>
-      <th>Price</th>
-      <th>Payment Method</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% if current_user.admin? %>
+  <h1><%= yield(:title) %></h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= sortable "created_at", "Date" %></th>
+        <th><%= sortable "store" %></th>
+        <th width="40%">Description</th>
+        <th><%= sortable "price"%></th>
+        <th><%= sortable "payment_method", "Payment Method" %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%= render @receipts %>
-  </tbody>
-</table>
-
+    <tbody>
+      <%= render @receipts %>
+    </tbody>
+  </table>
+<small class="pull-left">
+<%= will_paginate @repairs %>
+</small>
 <br>
+  <center>
+  <%= link_to 'New Receipt +', new_receipt_path, class: "btn btn-info"%>
+</center>
+<% else %>
 
-<%= link_to 'New Receipt', new_receipt_path %>
+        <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This page doesn't exist!</h1>
+            </center>
+          </div>
+      </div>
+    </div>
+
+<% end %>

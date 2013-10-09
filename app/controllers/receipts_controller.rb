@@ -6,7 +6,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts.json
   def index
     if current_user.admin?
-      @receipts = Receipt.all
+      @receipts = Receipt.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(10)
     else
       @receipts = current_user.receipts.all
     end
@@ -77,6 +77,14 @@ class ReceiptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def receipt_params
-      params.require(:receipt).permit(:store, :month, :day, :year, :description, :purchased_for, :price, :payment_method)
+      params.require(:receipt).permit(:store, :month, :day, :year, :description, :purchased_for, :price, :payment_method, :image)
+    end
+
+    def sort_column
+      params[:sort] || "created_at"
+    end
+    
+    def sort_direction
+      params[:direction] || "asc"
     end
 end

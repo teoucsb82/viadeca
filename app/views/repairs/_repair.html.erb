@@ -1,5 +1,4 @@
-<% if current_user == repair.user && current_user.id != 7 %>
-    <% if current_user.id != 11 %>
+<% if current_user == repair.user && !current_user.admin? %>
       <tr>
         <td><%= link_to "Ticket " + "#{repair.id}", repair, class: "btn btn-primary" %></td>
         <td><%= repair.description %></td>
@@ -21,10 +20,9 @@
             <% end %>
         </td>
       </tr>
-  <% end %>
 <% end %>
 
-<% if current_user.id == 7 || current_user.id == 11 %>
+<% if current_user.admin? %>
   <tr>
     <td><%= link_to "Ticket " + "#{repair.id}", repair, class: "btn btn-primary" %></td>
     <td><%= repair.description %></td>

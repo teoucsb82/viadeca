@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008222259) do
+ActiveRecord::Schema.define(version: 20131008235844) do
 
   create_table "admins", force: true do |t|
     t.string   "email",              default: "", null: false
@@ -179,6 +179,14 @@ ActiveRecord::Schema.define(version: 20131008222259) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "rimage_file_name"
+    t.string   "rimage_content_type"
+    t.integer  "rimage_file_size"
+    t.datetime "rimage_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "receipts", ["user_id"], name: "index_receipts_on_user_id"

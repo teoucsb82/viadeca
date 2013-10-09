@@ -75,6 +75,4 @@ class ApartmentsController < ApplicationController
       params.require(:apartment).permit(:streetAddress, :image, :image2, :image3, :image4, :image5, :image6, :image7, :aptNumber, :rent, :isAvailable, :description, :sqFootage, :beds, :baths, :parking, :stove, :washer, :drier, :refrigerator, :microwave, :dishwasher, :laundryOnSite, :hardwoodFloors, :pets, :gasHeater, :balcony, :airConditioning, :fireplace, :patio, :util_gas, :util_water, :util_electric, :util_maid, :util_trash, :util_gardener)
     end
 
-
-
 end

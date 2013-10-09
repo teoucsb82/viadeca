@@ -1,44 +1,78 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Receipts') %>
 
-<p>
-  <strong>Store:</strong>
-  <%= @receipt.store %>
-</p>
+<% if current_user.admin? %>
 
-<p>
-  <strong>Month:</strong>
-  <%= @receipt.month %>
-</p>
+<div class="row">
+  <div class="span12">
+    <div class="well">
+      <center>
+        <h1>Receipt # <%= @receipt.id %></h1>      
+      </center>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Day:</strong>
-  <%= @receipt.day %>
-</p>
+<div class="row">
+  <div class="span6">
+    <div class="well">
 
-<p>
-  <strong>Year:</strong>
-  <%= @receipt.year %>
-</p>
+      <%= image_tag @receipt.image %>
+    </div>
+  </div>
+    <div class="span6">
+    <div class="well">
+      <p>
+        <h3><%= @receipt.store %></h3>      
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @receipt.description %>
-</p>
+      <p>
+        <%= @receipt.month %>/<%= @receipt.day %>/<%= @receipt.year %>
+      </p>
 
-<p>
-  <strong>Purchased for:</strong>
-  <%= Apartment.find(@receipt.purchased_for).description %>
-</p>
+      <hr>
 
-<p>
-  <strong>Price:</strong>
-  <%= @receipt.price %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @receipt.description %>
+      </p>
 
-<p>
-  <strong>Payment method:</strong>
-  <%= @receipt.payment_method %>
-</p>
+      <hr>
+
+      <p>
+        <h3> <%= number_to_currency(@receipt.price) %></h3>      
+      </p>
+
+      <p>
+        <strong>Payment method:</strong>
+        <%= @receipt.payment_method %>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <div class="well">
+      <p>
+        Added on <%= @receipt.created_at.strftime("%b. %d %Y") %> by <%= @receipt.user.name %>
+      </p>      
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
 <%= link_to 'Back', receipts_path %>
+<% else %>
+
+        <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This page doesn't exist!</h1>
+            </center>
+          </div>
+      </div>
+    </div>
+
+<% end %>

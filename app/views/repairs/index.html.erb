@@ -4,11 +4,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th width="10%">Ticket</th>
+      <th width="10%"><%= sortable "id", "Ticket" %></th>
       <th>Description</th>
       <th width="10%">Created by</th>
-      <th width="10%">Created at</th>
-      <th width="10%">Status</th>
+      <th width="10%"><%= sortable "created_at", "Created at" %></th>
+      <th width="10%"><%= sortable "status" %></th>
       <th width="10%"></th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@
 
 <br>
 
-<% unless current_user.id == 11 %>
+<% unless current_user.admin? %>
   <div class="row">
       <div class="span12">
           <div class="well">
