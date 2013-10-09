@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  street: MyString
+  unit: MyString
+  rent: 1.5
+  deposit: 1.5
+  status: MyString
+  tenant1_name: MyString
+  tenant1_email: MyString
+  tenant1_phone: MyString
+  tenant2_name: MyString
+  tenant2_email: MyString
+  tenant2_phone: MyString
+  tenant3_name: MyString
+  tenant3_email: MyString
+  tenant3_phone: MyString
+  tenant4_name: MyString
+  tenant5_email: MyString
+  tenant6_phone: MyString
+  lease_started: MyString
+  lease_expires: MyString
+  late_payments: 1
+
+two:
+  street: MyString
+  unit: MyString
+  rent: 1.5
+  deposit: 1.5
+  status: MyString
+  tenant1_name: MyString
+  tenant1_email: MyString
+  tenant1_phone: MyString
+  tenant2_name: MyString
+  tenant2_email: MyString
+  tenant2_phone: MyString
+  tenant3_name: MyString
+  tenant3_email: MyString
+  tenant3_phone: MyString
+  tenant4_name: MyString
+  tenant5_email: MyString
+  tenant6_phone: MyString
+  lease_started: MyString
+  lease_expires: MyString
+  late_payments: 1

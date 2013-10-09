@@ -1,0 +1,11 @@
+
+      <tr>
+        <td><%= lease.street %></td>
+        <td><%= lease.unit %></td>
+        <td><%= lease.status %></td>
+        <td><%= link_to 'Show', lease %></td>
+            <% if current_user == lease.user %>
+            <td><%= link_to 'Edit', edit_lease_path(lease) %></td>
+            <td><%= link_to 'Destroy', lease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+      </tr>

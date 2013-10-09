@@ -1,0 +1,104 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @lease.street %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @lease.unit %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @lease.rent %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @lease.deposit %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @lease.status %>
+</p>
+
+<p>
+  <strong>Tenant1 name:</strong>
+  <%= @lease.tenant1_name %>
+</p>
+
+<p>
+  <strong>Tenant1 email:</strong>
+  <%= @lease.tenant1_email %>
+</p>
+
+<p>
+  <strong>Tenant1 phone:</strong>
+  <%= @lease.tenant1_phone %>
+</p>
+
+<p>
+  <strong>Tenant2 name:</strong>
+  <%= @lease.tenant2_name %>
+</p>
+
+<p>
+  <strong>Tenant2 email:</strong>
+  <%= @lease.tenant2_email %>
+</p>
+
+<p>
+  <strong>Tenant2 phone:</strong>
+  <%= @lease.tenant2_phone %>
+</p>
+
+<p>
+  <strong>Tenant3 name:</strong>
+  <%= @lease.tenant3_name %>
+</p>
+
+<p>
+  <strong>Tenant3 email:</strong>
+  <%= @lease.tenant3_email %>
+</p>
+
+<p>
+  <strong>Tenant3 phone:</strong>
+  <%= @lease.tenant3_phone %>
+</p>
+
+<p>
+  <strong>Tenant4 name:</strong>
+  <%= @lease.tenant4_name %>
+</p>
+
+<p>
+  <strong>Tenant5 email:</strong>
+  <%= @lease.tenant5_email %>
+</p>
+
+<p>
+  <strong>Tenant6 phone:</strong>
+  <%= @lease.tenant6_phone %>
+</p>
+
+<p>
+  <strong>Lease started:</strong>
+  <%= @lease.lease_started %>
+</p>
+
+<p>
+  <strong>Lease expires:</strong>
+  <%= @lease.lease_expires %>
+</p>
+
+<p>
+  <strong>Late payments:</strong>
+  <%= @lease.late_payments %>
+</p>
+
+<%= link_to 'Edit', edit_lease_path(@lease) %> |
+<%= link_to 'Back', leases_path %>

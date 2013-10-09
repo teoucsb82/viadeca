@@ -1,0 +1,30 @@
+<%= simple_form_for(@lease, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :street, :include_blank => "--Select Street--",
+      collection: Lease::ADDRESSES.sort  %>
+    <%= f.input :unit %>
+    <%= f.input :rent %>
+    <%= f.input :deposit %>
+    <%= f.input :tenant1_name %>
+    <%= f.input :tenant1_email %>
+    <%= f.input :tenant1_phone %>
+    <%= f.input :tenant2_name %>
+    <%= f.input :tenant2_email %>
+    <%= f.input :tenant2_phone %>
+    <%= f.input :tenant3_name %>
+    <%= f.input :tenant3_email %>
+    <%= f.input :tenant3_phone %>
+    <%= f.input :tenant4_name %>
+    <%= f.input :tenant5_email %>
+    <%= f.input :tenant6_phone %>
+    <%= f.input :lease_started %>
+    <%= f.input :lease_expires %>
+    <%= f.input :late_payments %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<h1>Apartment Database</h1>
+
+<table>
+  <thead class="table table-striped">
+    <tr>
+      <th>Street</th>
+      <th>Unit</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @leases %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lease', new_lease_path %>

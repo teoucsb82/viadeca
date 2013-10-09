@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008235844) do
+ActiveRecord::Schema.define(version: 20131009221758) do
 
   create_table "admins", force: true do |t|
     t.string   "email",              default: "", null: false
@@ -166,6 +166,34 @@ ActiveRecord::Schema.define(version: 20131008235844) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "leases", force: true do |t|
+    t.string   "street"
+    t.string   "unit"
+    t.float    "rent"
+    t.float    "deposit"
+    t.string   "status"
+    t.string   "tenant1_name"
+    t.string   "tenant1_email"
+    t.string   "tenant1_phone"
+    t.string   "tenant2_name"
+    t.string   "tenant2_email"
+    t.string   "tenant2_phone"
+    t.string   "tenant3_name"
+    t.string   "tenant3_email"
+    t.string   "tenant3_phone"
+    t.string   "tenant4_name"
+    t.string   "tenant5_email"
+    t.string   "tenant6_phone"
+    t.string   "lease_started"
+    t.string   "lease_expires"
+    t.integer  "late_payments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "leases", ["user_id"], name: "index_leases_on_user_id"
 
   create_table "receipts", force: true do |t|
     t.string   "store"

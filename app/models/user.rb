@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 	has_many :apartments, :dependent => :destroy
 	has_many :repairs, :dependent => :destroy
 	has_many :receipts, :dependent => :destroy
+	has_many :leases, :dependent => :destroy
 
 	validates :address, presence: true
 
