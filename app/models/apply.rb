@@ -23,6 +23,6 @@ class Apply < ActiveRecord::Base
 	validates :current_zip, 
             :length => { :minimum => 5, :maximum => 5 }                       
 
-	validates :acknowledgment, :acceptance => {:accept => true}          
+	validates :acknowledgment, :acceptance => {:accept => true}   
 
 end

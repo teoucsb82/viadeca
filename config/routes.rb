@@ -8,6 +8,8 @@ Viadeca::Application.routes.draw do
 
   resources :apartments
 
+  resources :charges
+
   devise_for :users
   get 'home' => 'pages#home'
   get 'avail' => 'apartments#index'
@@ -15,6 +17,7 @@ Viadeca::Application.routes.draw do
   get 'apply' => 'applies#new'
   get 'repairs' => 'repairs#index'
   get 'admin' => 'pages#admin'
+
 
   resources :inquiries, :only => [:new, :create] do
   get 'thank_you', :on => :collection

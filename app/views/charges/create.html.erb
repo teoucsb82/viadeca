@@ -1,0 +1,18 @@
+<% provide(:title, 'Payment Successful') %>
+
+
+<h1>Thank You!</h1>
+<center>
+	<div class="hero-unit">
+		<p>
+			Your payment in the amount of <strong>$20.00</strong> has been successfully received and your application process is complete.
+		</p>
+		<p>
+			All applications are processed on a first come, first serve basis, and applicants will be notified immediately upon decision.
+		</p>
+		<hr>
+		<p>
+			Please save a copy of this page as your receipt. Application # <%= Apply.last.id %>
+		</p>
+	</div>
+</center>

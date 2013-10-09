@@ -1,4 +1,6 @@
-<h1>Rental Application</h1>
+<% provide(:title, 'Rental Application') %>
+
+  <h1><%= yield(:title) %></h1>
 
 <%= render 'form' %>
 

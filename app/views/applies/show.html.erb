@@ -1,13 +1,25 @@
-<div class="center hero-unit">
-  <h1>Application was received!</h1><hr>
-  <p>
-  	Your application has been received and a confirmation email has been sent to the address you provided.
-  </p>
-  <p>
-  	We will be in touch soon to follow up on the status of your application.
-  </p>
-  <p>
-  	<small>Originally submitted: <%= @apply.created_at %></small>
-  </p>
+<% provide(:title, 'Application Submitted') %>
+
+
+<h1><%= yield(:title) %>!</h1>
+<center>
+  <div class="hero-unit">
+    Your application has been submitted and a confirmation email has been sent to <%= @apply.email %>.
+    <hr>
+    
+    <p>
+    	There is a $20 fee per application to run a background/credit check. We accept payments through our secured server, or you can also write a check to <strong>"Via Deca Partners"</strong> instead. Cash is not accepted.
+    </p>
+    <p>
+         <%= form_tag charges_path do %>
+          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Via Deca Partners - Tenant Application Fee"
+                  data-amount="2000"></script>
+    <% end %>
+    </p>
+
+  </div>
+</center>
 
 <%= link_to '<< Back to all available units', avail_path, class: "btn btn-primary" %>
