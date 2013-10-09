@@ -1,28 +1,44 @@
 <%= simple_form_for(@lease, html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :street, :include_blank => "--Select Street--",
-      collection: Lease::ADDRESSES.sort  %>
-    <%= f.input :unit %>
-    <%= f.input :rent %>
-    <%= f.input :deposit %>
-    <%= f.input :tenant1_name %>
-    <%= f.input :tenant1_email %>
-    <%= f.input :tenant1_phone %>
-    <%= f.input :tenant2_name %>
-    <%= f.input :tenant2_email %>
-    <%= f.input :tenant2_phone %>
-    <%= f.input :tenant3_name %>
-    <%= f.input :tenant3_email %>
-    <%= f.input :tenant3_phone %>
-    <%= f.input :tenant4_name %>
-    <%= f.input :tenant5_email %>
-    <%= f.input :tenant6_phone %>
-    <%= f.input :lease_started %>
-    <%= f.input :lease_expires %>
-    <%= f.input :late_payments %>
-  </div>
+<div class="form-inputs">
+    <div class="row">
+        <div class="span6">
+            <div class="well">
+                <%= f.input :street, :include_blank => "--Select Street--",
+                  collection: Lease::ADDRESSES.sort  %>
+                <%= f.input :unit %>
+                <%= f.input :rent %>
+                <%= f.input :deposit %>
+                <hr>
+
+                <%= f.input :lease_started %>
+                <%= f.input :lease_expires %>
+                <%= f.input :late_payments %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="well">        
+                <%= f.input :tenant1_name, label: "Tenant #1 Name:" %>
+                <%= f.input :tenant1_email, label: "Tenant #1 Email:" %>
+                <%= f.input :tenant1_phone, label: "Tenant #1 Phone:"   %>
+                <hr>
+                <%= f.input :tenant2_name, label: "Tenant #2 Name:" %>
+                <%= f.input :tenant2_email, label: "Tenant #2 Email:"  %>
+                <%= f.input :tenant2_phone, label: "Tenant #2 Phone:"   %>
+                <hr>
+                <%= f.input :tenant3_name, label: "Tenant #3 Name:" %>
+                <%= f.input :tenant3_email, label: "Tenant #3 Email:"  %>
+                <%= f.input :tenant3_phone, label: "Tenant #3 Phone:"   %>
+                <hr>
+                <%= f.input :tenant4_name, label: "Tenant #4 Name:" %>
+                <%= f.input :tenant5_email, label: "Tenant #4 Email:"  %>
+                <%= f.input :tenant6_phone, label: "Tenant #4 Phone:"  %>
+            </div>
+        </div>
+    </div>
+    <%= f.input :doc, label: "Upload lease" %>
+</div>
 
   <div class="form-actions">
     <%= f.button :submit %>

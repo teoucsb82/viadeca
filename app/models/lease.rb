@@ -6,11 +6,14 @@ class Lease < ActiveRecord::Base
 					:tenant2_name, :tenant2_email, :tenant2_phone, 
 					:tenant3_name, :tenant3_email, :tenant3_phone, 
 					:tenant4_name, :tenant5_email, :tenant6_phone, 
-					:lease_started, :lease_expires, :late_payments
+					:lease_started, :lease_expires, :late_payments, :doc
+	
+	has_attached_file :doc
 
 	belongs_to :user
 	validates :user_id, presence: true
 	validates :street, presence: true
 
+	validates_attachment_content_type :doc, :content_type => ['application/pdf', 'application/msword', 'text/plain']
 
 end

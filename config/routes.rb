@@ -19,7 +19,7 @@ Viadeca::Application.routes.draw do
   get 'apply' => 'applies#new'
   get 'repairs' => 'repairs#index'
   get 'admin' => 'pages#admin'
-
+  get 'tenants' => 'leases#index'
 
   resources :inquiries, :only => [:new, :create] do
   get 'thank_you', :on => :collection
