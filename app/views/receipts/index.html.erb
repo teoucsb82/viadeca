@@ -1,7 +1,15 @@
 <% provide(:title, 'Receipts') %>
 
 <% if current_user.admin? %>
-  <h1><%= yield(:title) %></h1>
+  <h1><%= yield(:title) %> - Grand Total: 
+  
+    <% total = 0 %>
+    <% temp = Receipt.all %>
+    <% temp.each do |x| %>
+    <%  total += x.price %>
+    <% end %>
+    <%= number_to_currency(total) %>
+  </h1>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -17,11 +25,38 @@
     </thead>
 
     <tbody>
-      <%= render @receipts %>
+      <%= render @receipts %> 
+       <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td><strong class="pull-right">Total: </strong></td>
+          <td>    
+            <% total = 0 %>
+            <% @receipts.each do |x| %>
+            <%  total += x.price %>
+            <% end %>
+            <%= number_to_currency(total) %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
     </tbody>
   </table>
 <small class="pull-left">
-<%= will_paginate @repairs %>
+<%= will_paginate @receipts %>
 </small>
 <br>
   <center>
