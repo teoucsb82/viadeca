@@ -20,11 +20,14 @@
         <%= render @leases %>
       </tbody>
     </table>
+<small class="pull-left">
+<%= will_paginate @repairs %>
+</small>
 
     <br>
-
-    <%= link_to 'New Lease', new_lease_path %>
-
+    <center>
+    <%= link_to 'Add Apartment +', new_lease_path, class: "btn btn-primary" %>
+    <center>
 
 <% else %>
 
