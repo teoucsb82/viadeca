@@ -28,7 +28,46 @@ class Roll < ActiveRecord::Base
 						:rent_due_2462_B, :rent_paid_2462_B, :rent_owed_2462_B, :rent_ontime_2462_B, :rent_payment_method_2462_B,  
 						:rent_due_2462_A, :rent_paid_2462_A, :rent_owed_2462_A, :rent_ontime_2462_A, :rent_payment_method_2462_A,  
 						:rent_due_2462_C, :rent_paid_2462_C, :rent_owed_2462_C, :rent_ontime_2462_C, :rent_payment_method_2462_C,
-						:month, :year
+						:month, :year,
+						:notes_1814_1, :notes_1814_2, :notes_1814_3, :notes_1814_4, :notes_1814_5, :notes_1818_1, :notes_1818_A, :notes_1818_B, :notes_1818_C, :notes_1818_D, :notes_2462_A, :notes_2462_B, :notes_2462_C, :notes_1241_1, :notes_1241_2, :notes_1241_3, :notes_1241_4, :notes_1241_5, :notes_1241_6, :notes_1241_7, :notes_1241_8, :notes_1241_9, :notes_1723_1, :notes_1723_2, :notes_1723_3, :notes_1723_4, :notes_1723_5,
+						:img_1814_1, :img_1814_2, :img_1814_3, :img_1814_4, :img_1814_5,
+						:img_1818_1, :img_1818_a, :img_1818_b, :img_1818_c, :img_1818_d,
+						:img_2462_a, :img_2462_b, :img_2462_c,
+						:img_1241_1, :img_1241_2, :img_1241_3, :img_1241_4, :img_1241_5, :img_1241_6, :img_1241_7, :img_1241_8, :img_1241_9,
+						:img_1723_1, :img_1723_2, :img_1723_3, :img_1723_4, :img_1723_5
+
+	has_attached_file :img_1241_1, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_2, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_3, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_4, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_5, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_6, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_7, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_8, styles: { medium: "320x240>"}
+	has_attached_file :img_1241_9, styles: { medium: "320x240>"}
+
+	has_attached_file :img_1723_1, styles: { medium: "320x240>"}
+	has_attached_file :img_1723_2, styles: { medium: "320x240>"}
+	has_attached_file :img_1723_3, styles: { medium: "320x240>"}
+	has_attached_file :img_1723_4, styles: { medium: "320x240>"}
+	has_attached_file :img_1723_5, styles: { medium: "320x240>"}
+
+	has_attached_file :img_1814_1, styles: { medium: "320x240>"}
+	has_attached_file :img_1814_2, styles: { medium: "320x240>"}
+	has_attached_file :img_1814_3, styles: { medium: "320x240>"}
+	has_attached_file :img_1814_4, styles: { medium: "320x240>"}
+	has_attached_file :img_1814_5, styles: { medium: "320x240>"}
+
+	has_attached_file :img_1818_1, styles: { medium: "320x240>"}
+	has_attached_file :img_1818_a, styles: { medium: "320x240>"}
+	has_attached_file :img_1818_b, styles: { medium: "320x240>"}
+	has_attached_file :img_1818_c, styles: { medium: "320x240>"}
+	has_attached_file :img_1818_d, styles: { medium: "320x240>"}
+
+	has_attached_file :img_2462_a, styles: { medium: "320x240>"}
+	has_attached_file :img_2462_b, styles: { medium: "320x240>"}
+	has_attached_file :img_2462_c, styles: { medium: "320x240>"}
+
 
 	belongs_to :user
 	validates :user_id, presence: true

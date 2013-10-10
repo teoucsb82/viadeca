@@ -2,34 +2,35 @@
 
 <% if current_user.admin? %>
   <h1><%= yield(:title) %></h1>
+  
+  <%= image_tag @roll.img_1814_1 %>
+  <p>
+    <strong>Rent due 1814 1:</strong>
+    <%= @roll.rent_due_1814_1 %>
+  </p>
 
-<p>
-  <strong>Rent due 1814 1:</strong>
-  <%= @roll.rent_due_1814_1 %>
-</p>
+  <p>
+    <strong>Rent paid 1814 1:</strong>
+    <%= @roll.rent_paid_1814_1 %>
+  </p>
 
-<p>
-  <strong>Rent paid 1814 1:</strong>
-  <%= @roll.rent_paid_1814_1 %>
-</p>
+  <p>
+    <strong>Rent owed 1814 1:</strong>
+    <%= @roll.rent_owed_1814_1 %>
+  </p>
 
-<p>
-  <strong>Rent owed 1814 1:</strong>
-  <%= @roll.rent_owed_1814_1 %>
-</p>
+  <p>
+    <strong>Rent ontime 1814 1:</strong>
+    <%= @roll.rent_ontime_1814_1 %>
+  </p>
 
-<p>
-  <strong>Rent ontime 1814 1:</strong>
-  <%= @roll.rent_ontime_1814_1 %>
-</p>
+  <p>
+    <strong>Rent payment method 1814 1:</strong>
+    <%= @roll.rent_payment_method_1814_1 %>
+  </p>
 
-<p>
-  <strong>Rent payment method 1814 1:</strong>
-  <%= @roll.rent_payment_method_1814_1 %>
-</p>
-
-<%= link_to 'Edit', edit_roll_path(@roll) %> |
-<%= link_to 'Back', rolls_path %>
+  <%= link_to 'Edit', edit_roll_path(@roll) %> |
+  <%= link_to 'Back', rolls_path %>
 
 <% else %>
 

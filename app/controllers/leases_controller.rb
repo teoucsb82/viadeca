@@ -5,7 +5,7 @@ class LeasesController < ApplicationController
   # GET /leases
   # GET /leases.json
   def index
-    @leases = Lease.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(10)
+    @leases = Lease.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(9)
   end
 
   # GET /leases/1

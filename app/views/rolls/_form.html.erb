@@ -1,24 +1,352 @@
 <%= simple_form_for(@roll, html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
+  <%= f.full_error :image_file_size, class: "alert alert-error" %>
+  <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
 <div class="form-inputs">
   <div class="row">
-    <div class="span5">          
-      <div class="well">
+    <div class="span5">     
         <%= f.input :month, :include_blank => "", collection: Receipt::MONTHS %>
         <%= f.input :year, :input_html => { :value => 2013 } %>
+
+    </div>
+  </div>
+
+  <hr>
+  <h2>1241 Amherst Ave</h2>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #1</h3>
+        <%= f.input :rent_due_1241_1, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'1').rent } %>
+        <%= f.input :rent_paid_1241_1, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_1, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_1, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_1, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_1, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #2</h3>
+        <%= f.input :rent_due_1241_2, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'2').rent } %>
+        <%= f.input :rent_paid_1241_2, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_2, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_2, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_2, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_2, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #3</h3>
+        <%= f.input :rent_due_1241_3, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'3').rent } %>
+        <%= f.input :rent_paid_1241_3, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_3, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_3, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_3, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_3, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #4</h3>
+        <%= f.input :rent_due_1241_4, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'4').rent } %>
+        <%= f.input :rent_paid_1241_4, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_4, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_4, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_4, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_4, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+ <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #5</h3>
+        <%= f.input :rent_due_1241_5, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'5').rent } %>
+        <%= f.input :rent_paid_1241_5, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_5, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_5, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_5, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_5, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #6</h3>
+        <%= f.input :rent_due_1241_6, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'6').rent } %>
+        <%= f.input :rent_paid_1241_6, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_6, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_6, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_6, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_6, label: "Special Notes" %>
+      </div>
+    </div>    
+  </div>
+   <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #7</h3>
+        <%= f.input :rent_due_1241_7, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'7').rent } %>
+        <%= f.input :rent_paid_1241_7, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_7, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_7, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_7, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_7, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #8</h3>
+        <%= f.input :rent_due_1241_8, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'8').rent } %>
+        <%= f.input :rent_paid_1241_8, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_8, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_8, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_8, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_8, label: "Special Notes" %>
+      </div>
+    </div>    
+  </div>
+   <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1241 Amherst Ave - Apt #9</h3>
+        <%= f.input :rent_due_1241_9, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1241 Amherst Ave', unit:'9').rent } %>
+        <%= f.input :rent_paid_1241_9, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1241_9, label: "Late?" %>
+        <%= f.input :rent_payment_method_1241_9, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1241_9, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1241_9, label: "Special Notes" %>
+      </div>
+    </div>   
+  </div>
+
+  <hr>
+  <h2>1723 Centinela Ave</h2>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1723 Centinela Ave - Apt #1</h3>
+        <%= f.input :rent_due_1723_1, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1723 Centinela Ave', unit:'1').rent } %>
+        <%= f.input :rent_paid_1723_1, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1723_1, label: "Late?" %>
+        <%= f.input :rent_payment_method_1723_1, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1723_1, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1723_1, label: "Special Notes" %>
+      </div>
+    </div>
+
+    <div class="span5">          
+      <div class="well">
+        <h3>1723 Centinela Ave - Apt #2</h3>
+        <%= f.input :rent_due_1723_2, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1723 Centinela Ave', unit:'2').rent } %>
+        <%= f.input :rent_paid_1723_2, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1723_2, label: "Late?" %>
+        <%= f.input :rent_payment_method_1723_2, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1723_2, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1723_2, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1723 Centinela Ave - Apt #3</h3>
+        <%= f.input :rent_due_1723_3, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1723 Centinela Ave', unit:'3').rent } %>
+        <%= f.input :rent_paid_1723_3, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1723_3, label: "Late?" %>
+        <%= f.input :rent_payment_method_1723_3, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1723_3, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1723_3, label: "Special Notes" %>
+      </div>
+    </div>
+
+    <div class="span5">          
+      <div class="well">
+        <h3>1723 Centinela Ave - Apt #4</h3>
+        <%= f.input :rent_due_1723_4, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1723 Centinela Ave', unit:'4').rent } %>
+        <%= f.input :rent_paid_1723_4, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1723_4, label: "Late?" %>
+        <%= f.input :rent_payment_method_1723_4, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1723_4, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1723_4, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1723 Centinela Ave - Apt #5</h3>
+        <%= f.input :rent_due_1723_5, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1723 Centinela Ave', unit:'5').rent } %>
+        <%= f.input :rent_paid_1723_5, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1723_5, label: "Late?" %>
+        <%= f.input :rent_payment_method_1723_5, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1723_5, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1723_5, label: "Special Notes" %>
       </div>
     </div>
   </div>
 
+  <!-- 1814 -->
+
+  <hr>
+  <h2>1814 10th Street</h2>
   <div class="row">
-    <div class="span10">          
+    <div class="span5">          
       <div class="well">
-        <%= f.input :rent_due_1814_1 %>
-        <%= f.input :rent_paid_1814_1 %>
-        <%= f.input :rent_owed_1814_1 %>
-        <%= f.input :rent_ontime_1814_1 %>
-        <%= f.input :rent_payment_method_1814_1, :include_blank => "", collection: Roll::PAYMENT %>
+        <h3>1814 10th Street - Apt #1</h3>
+        <%= f.input :rent_due_1814_1, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1814 10th Street', unit:'1').rent } %>
+        <%= f.input :rent_paid_1814_1, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1814_1, label: "Late?" %>
+        <%= f.input :rent_payment_method_1814_1, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1814_1, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1814_1, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1814 10th Street - Apt #2</h3>
+        <%= f.input :rent_due_1814_2, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1814 10th Street', unit:'2').rent } %>
+        <%= f.input :rent_paid_1814_2, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1814_2, label: "Late?" %>
+        <%= f.input :rent_payment_method_1814_2, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1814_2, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1814_2, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1814 10th Street - Apt #3</h3>
+        <%= f.input :rent_due_1814_3, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1814 10th Street', unit:'3').rent } %>
+        <%= f.input :rent_paid_1814_3, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1814_3, label: "Late?" %>
+        <%= f.input :rent_payment_method_1814_3, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1814_3, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1814_3, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1814 10th Street - Apt #4</h3>
+        <%= f.input :rent_due_1814_4, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1814 10th Street', unit:'4').rent } %>
+        <%= f.input :rent_paid_1814_4, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1814_4, label: "Late?" %>
+        <%= f.input :rent_payment_method_1814_4, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1814_4, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1814_4, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+ <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1814 10th Street - Apt #5</h3>
+        <%= f.input :rent_due_1814_5, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1814 10th Street', unit:'5').rent } %>
+        <%= f.input :rent_paid_1814_5, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1814_5, label: "Late?" %>
+        <%= f.input :rent_payment_method_1814_5, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1814_5, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1814_5, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+
+  <!--1818 -->
+
+  <hr>
+  <h2>1818 10th Street</h2>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1818 10th Street - Apt #1</h3>
+        <%= f.input :rent_due_1818_1, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1818 10th Street', unit:'1').rent } %>
+        <%= f.input :rent_paid_1818_1, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1818_1, label: "Late?" %>
+        <%= f.input :rent_payment_method_1818_1, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1818_1, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1818_1, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1818 10th Street - Apt #A</h3>
+        <%= f.input :rent_due_1818_A, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1818 10th Street', unit:'A').rent } %>
+        <%= f.input :rent_paid_1818_A, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1818_A, label: "Late?" %>
+        <%= f.input :rent_payment_method_1818_A, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1818_a, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1818_A, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1818 10th Street - Apt #B</h3>
+        <%= f.input :rent_due_1818_B, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1818 10th Street', unit:'B').rent } %>
+        <%= f.input :rent_paid_1818_B, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1818_B, label: "Late?" %>
+        <%= f.input :rent_payment_method_1818_B, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1818_b, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1818_B, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>1818 10th Street - Apt #C</h3>
+        <%= f.input :rent_due_1818_C, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1818 10th Street', unit:'C').rent } %>
+        <%= f.input :rent_paid_1818_C, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1818_C, label: "Late?" %>
+        <%= f.input :rent_payment_method_1818_C, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1818_c, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1818_C, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+
+    <!--2462 -->
+
+  <hr>
+  <h2>2462 Oak Street</h2>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>2462 Oak Street - Apt #A</h3>
+        <%= f.input :rent_due_2462_A, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '2462 Oak Street', unit:'A').rent } %>
+        <%= f.input :rent_paid_2462_A, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_2462_A, label: "Late?" %>
+        <%= f.input :rent_payment_method_2462_A, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_2462_a, label: "Upload Check/PDF" %>
+        <%= f.input :notes_2462_A, label: "Special Notes" %>
+      </div>
+    </div>
+    <div class="span5">          
+      <div class="well">
+        <h3>2462 Oak Street - Apt #B</h3>
+        <%= f.input :rent_due_2462_B, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '2462 Oak Street', unit:'B').rent } %>
+        <%= f.input :rent_paid_2462_B, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_2462_B, label: "Late?" %>
+        <%= f.input :rent_payment_method_2462_B, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_2462_b, label: "Upload Check/PDF" %>
+        <%= f.input :notes_2462_B, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>2462 Oak Street - Apt #C</h3>
+        <%= f.input :rent_due_2462_C, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '2462 Oak Street', unit:'C').rent } %>
+        <%= f.input :rent_paid_2462_C, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_2462_C, label: "Late?" %>
+        <%= f.input :rent_payment_method_2462_C, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_2462_c, label: "Upload Check/PDF" %>
+        <%= f.input :notes_2462_C, label: "Special Notes" %>
       </div>
     </div>
   </div>
