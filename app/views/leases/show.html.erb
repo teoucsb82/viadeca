@@ -1,108 +1,156 @@
+<% provide(:title, "#{@lease.street}, ##{@lease.unit}") %>
 
-<p>
-  <strong>Lease:</strong>
-  <%= link_to @lease.doc_file_name, @lease.doc_file_name %>
-</p>
+<% if current_user.admin? %>
+<div class="row">
+  <div class="span12">
+    <div class="well">
+      <center>
+        <h1><%= yield(:title) %></h1>
+      </center>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Street:</strong>
-  <%= @lease.street %>
-</p>
+<div class="row">
+  <div class="span6">
+    <div class="well">
+      <p>
+        <strong>Beds:</strong>
+        <%= @lease.beds %>
+      </p>
+      <p>
+        <strong>Baths:</strong>
+        <%= @lease.bath %>
+      </p>
+      <hr>
+      <p>
+        <strong>Rent:</strong>
+        <%= @lease.rent %>
+      </p>
+      <p>
+        <strong>Deposit:</strong>
+        <%= @lease.deposit %>
+      </p>
+      <hr>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @lease.unit %>
-</p>
+      <p>
+        <strong>Lease started:</strong>
+        <%= @lease.lease_started %>
+      </p>
 
-<p>
-  <strong>Rent:</strong>
-  <%= @lease.rent %>
-</p>
+      <p>
+        <strong>Lease expires:</strong>
+        <%= @lease.lease_expires %>
+      </p>
 
-<p>
-  <strong>Deposit:</strong>
-  <%= @lease.deposit %>
-</p>
+      <p>
+        <strong>Late payments:</strong>
+        <%= @lease.late_payments %>
+      </p>
+      <% if @lease.doc.exists? %>
+      <hr>
+        <p>
+          <%= link_to "Lease Agreement", @lease.doc.url, :target => '_blank'%>
+        </p>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @lease.status %>
-</p>
+  <div class="span6">
+    <div class="well">
+      <% if @lease.tenant1_name != "" %>
+        <p>
+          <h4><%= @lease.tenant1_name %></h4>
+        </p>
+        <% if @lease.tenant1_phone != "" %>
+            <p>
+              <strong>Phone:</strong>
+              <%= @lease.tenant1_phone %>
+            </p>
+        <% end %>
+        <% if @lease.tenant1_email !="" %>
+            <p>
+              <strong><%= mail_to @lease.tenant1_email, @lease.tenant1_email %>
+            </p>
+        <% end %>
+      <hr>
+      <% end %>
+      <% if @lease.tenant2_name != "" %>
+        <p>
+          <h4><%= @lease.tenant2_name %></h4>
+        </p>
+        <% if @lease.tenant2_phone != "" %>
+            <p>
+              <strong>Phone:</strong>
+              <%= @lease.tenant2_phone %>
+            </p>
+        <% end %>
+        <% if @lease.tenant2_email !="" %>
+            <p>
+              <strong><%= mail_to @lease.tenant2_email, @lease.tenant2_email %>
+            </p>
+        <% end %>
+      <hr>
+      <% end %>
 
-<p>
-  <strong>Tenant1 name:</strong>
-  <%= @lease.tenant1_name %>
-</p>
+      <% if @lease.tenant3_name != "" %>
+        <p>
+          <h4><%= @lease.tenant3_name %></h4>
+        </p>
+        <% if @lease.tenant3_phone != "" %>
+            <p>
+              <strong>Phone:</strong>
+              <%= @lease.tenant3_phone %>
+            </p>
+        <% end %>
+        <% if @lease.tenant3_email !="" %>
+            <p>
+              <strong><%= mail_to @lease.tenant3_email, @lease.tenant3_email %>
+            </p>
+        <% end %>
+      <hr>
+      <% end %>
 
-<p>
-  <strong>Tenant1 email:</strong>
-  <%= @lease.tenant1_email %>
-</p>
+      <% if @lease.tenant4_name != "" %>
+        <p>
+          <h4><%= @lease.tenant4_name %></h4>
+        </p>
+        <% if @lease.tenant6_phone != "" %>
+            <p>
+              <strong>Phone:</strong>
+              <%= @lease.tenant6_phone %>
+            </p>
+        <% end %>
+        <% if @lease.tenant5_email !="" %>
+            <p>
+              <strong><%= mail_to @lease.tenant5_email, @lease.tenant5_email %>
+            </p>
+        <% end %>
+      <hr>
+      <% end %>
 
-<p>
-  <strong>Tenant1 phone:</strong>
-  <%= @lease.tenant1_phone %>
-</p>
+    </div>
+  </div>
 
-<p>
-  <strong>Tenant2 name:</strong>
-  <%= @lease.tenant2_name %>
-</p>
 
-<p>
-  <strong>Tenant2 email:</strong>
-  <%= @lease.tenant2_email %>
-</p>
+</div>
 
-<p>
-  <strong>Tenant2 phone:</strong>
-  <%= @lease.tenant2_phone %>
-</p>
 
-<p>
-  <strong>Tenant3 name:</strong>
-  <%= @lease.tenant3_name %>
-</p>
 
-<p>
-  <strong>Tenant3 email:</strong>
-  <%= @lease.tenant3_email %>
-</p>
-
-<p>
-  <strong>Tenant3 phone:</strong>
-  <%= @lease.tenant3_phone %>
-</p>
-
-<p>
-  <strong>Tenant4 name:</strong>
-  <%= @lease.tenant4_name %>
-</p>
-
-<p>
-  <strong>Tenant5 email:</strong>
-  <%= @lease.tenant5_email %>
-</p>
-
-<p>
-  <strong>Tenant6 phone:</strong>
-  <%= @lease.tenant6_phone %>
-</p>
-
-<p>
-  <strong>Lease started:</strong>
-  <%= @lease.lease_started %>
-</p>
-
-<p>
-  <strong>Lease expires:</strong>
-  <%= @lease.lease_expires %>
-</p>
-
-<p>
-  <strong>Late payments:</strong>
-  <%= @lease.late_payments %>
-</p>
 
 <%= link_to 'Edit', edit_lease_path(@lease) %> |
 <%= link_to 'Back', leases_path %>
+
+<% else %>
+
+        <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This page doesn't exist!</h1>
+            </center>
+          </div>
+      </div>
+    </div>
+
+<% end %>

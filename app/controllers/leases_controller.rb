@@ -5,7 +5,7 @@ class LeasesController < ApplicationController
   # GET /leases
   # GET /leases.json
   def index
-    @leases = Lease.all
+    @leases = Lease.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(10)
   end
 
   # GET /leases/1
@@ -73,6 +73,15 @@ class LeasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lease_params
-      params.require(:lease).permit(:street, :unit, :rent, :deposit, :status, :tenant1_name, :tenant1_email, :tenant1_phone, :tenant2_name, :tenant2_email, :tenant2_phone, :tenant3_name, :tenant3_email, :tenant3_phone, :tenant4_name, :tenant5_email, :tenant6_phone, :lease_started, :lease_expires, :late_payments, :doc)
+      params.require(:lease).permit(:street, :unit, :rent, :deposit, :status, :tenant1_name, :tenant1_email, :tenant1_phone, :tenant2_name, :tenant2_email, :tenant2_phone, :tenant3_name, :tenant3_email, :tenant3_phone, :tenant4_name, :tenant5_email, :tenant6_phone, :lease_started, :lease_expires, :late_payments, :doc, :beds, :bath)
     end
+
+    def sort_column
+      params[:sort] || "street,unit"
+    end
+    
+    def sort_direction
+      params[:direction] || "desc"
+    end
+
 end

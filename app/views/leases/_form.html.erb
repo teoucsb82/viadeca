@@ -8,6 +8,8 @@
                 <%= f.input :street, :include_blank => "--Select Street--",
                   collection: Lease::ADDRESSES.sort  %>
                 <%= f.input :unit %>
+                <%= f.input :beds %>
+                <%= f.input :bath %>
                 <%= f.input :rent %>
                 <%= f.input :deposit %>
                 <hr>
@@ -15,6 +17,9 @@
                 <%= f.input :lease_started %>
                 <%= f.input :lease_expires %>
                 <%= f.input :late_payments %>
+                <hr>
+
+                <%= f.input :doc, label: "Upload lease" %>
             </div>
         </div>
         <div class="span6">
@@ -37,10 +42,9 @@
             </div>
         </div>
     </div>
-    <%= f.input :doc, label: "Upload lease" %>
 </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Add Apartment", class: "btn btn-primary" %>
   </div>
 <% end %>
