@@ -81,7 +81,7 @@ class LeasesController < ApplicationController
     end
     
     def sort_direction
-      params[:direction] || "desc"
+      params[:direction] || "asc"
     end
 
 end

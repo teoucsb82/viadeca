@@ -1,7 +1,7 @@
 
   <tr>
     <td><%= link_to "#{lease.street}, ##{lease.unit}", lease, class: "btn btn-info"%></td>
-    <td><%= lease.rent %></td>
+    <td><%= number_to_currency(lease.rent) %></td>
     <td>  
         <% if lease.tenant1_name != "" %>
             <%= lease.tenant1_name %>

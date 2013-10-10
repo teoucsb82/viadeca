@@ -25,11 +25,11 @@
       <hr>
       <p>
         <strong>Rent:</strong>
-        <%= @lease.rent %>
+        <%= number_to_currency(@lease.rent) %>
       </p>
       <p>
         <strong>Deposit:</strong>
-        <%= @lease.deposit %>
+        <%= number_to_currency(@lease.deposit) %>
       </p>
       <hr>
 
