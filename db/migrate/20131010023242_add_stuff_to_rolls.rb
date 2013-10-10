@@ -18,7 +18,7 @@ class AddStuffToRolls < ActiveRecord::Migration
     add_column :rolls, :rent_due_1814_5, :float
     add_column :rolls, :rent_paid_1814_5, :float
     add_column :rolls, :rent_owed_1814_5, :float
-    add_column :rolls, :rent_ontime_1814_5, :booleanrent_payment_method_1814_5
+    add_column :rolls, :rent_ontime_1814_5, :boolean
     add_column :rolls, :rent_due_1818_1, :float
     add_column :rolls, :rent_paid_1818_1, :float
     add_column :rolls, :rent_owed_1818_1, :float
