@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	has_many :repairs, :dependent => :destroy
 	has_many :receipts, :dependent => :destroy
 	has_many :leases, :dependent => :destroy
+	has_many :rolls, :dependent => :destroy
 
 	validates :address, presence: true
 

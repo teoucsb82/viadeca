@@ -4,17 +4,15 @@
 
 		<div class="row">
 	      <div class="span12">
-	          <div class="hero-unit">
 	          	<center>
-		            <h1><%= yield(:title) %></h1>
+		            <h1><%= yield(:title) %></h1><hr>
 		        </center>
-	          </div>
 	      </div>
 	    </div>
 		
 		<div class="row">
         <div class="span3">
-              <div class="well">
+              <div class="hero-unit">
                 <center>
                 <h2>APARTMENTS</h2>
                 </center>   
@@ -47,7 +45,7 @@
 
     <div class="row">
         <div class="span3">
-              <div class="well">
+              <div class="hero-unit">
                 <center>
                 <h2>TENANTS</h2>
                 </center>   
@@ -57,18 +55,28 @@
         <div class="span4 offset1">
               <div class="well">
                 <center>
+                <h4>Rent Roll</h2>
+                    Monthly rent payment information.
+                  <hr>
+                <p><%= link_to "View Checks", rolls_path, class: "btn btn-primary" %></p>
+                </center>  
+              </div>
+        </div>
+            <div class="span4">
+              <div class="well">
+                <center>
                 <h4>Repairs</h2>
                     Monitor tenant-submitted repair requests.
                   <hr>
                 <p><%= link_to "Manage Repairs", repairs_path, class: "btn btn-primary" %></p>
                 </center>  
               </div>
-        </div>
+           </div>
       </div>
       
       <div class="row">
         <div class="span3">
-              <div class="well">
+              <div class="hero-unit">
                 <center>
                 <h2>WORK ORDERS</h2>
                 </center>   

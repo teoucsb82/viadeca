@@ -1,0 +1,29 @@
+<%= simple_form_for(@roll, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+<div class="form-inputs">
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <%= f.input :month, :include_blank => "", collection: Receipt::MONTHS %>
+        <%= f.input :year, :input_html => { :value => 2013 } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span10">          
+      <div class="well">
+        <%= f.input :rent_due_1814_1 %>
+        <%= f.input :rent_paid_1814_1 %>
+        <%= f.input :rent_owed_1814_1 %>
+        <%= f.input :rent_ontime_1814_1 %>
+        <%= f.input :rent_payment_method_1814_1, :include_blank => "", collection: Roll::PAYMENT %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rent_due_1814_1: 1.5
+  rent_paid_1814_1: 1.5
+  rent_owed_1814_1: 1.5
+  rent_ontime_1814_1: false
+  rent_payment_method_1814_1: MyString
+
+two:
+  rent_due_1814_1: 1.5
+  rent_paid_1814_1: 1.5
+  rent_owed_1814_1: 1.5
+  rent_ontime_1814_1: false
+  rent_payment_method_1814_1: MyString

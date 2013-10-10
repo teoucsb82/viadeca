@@ -1,0 +1,17 @@
+
+      <tr>
+        <td><%= roll.month %></td>
+        <td><%= roll.year %></td>
+        <td><%= roll.rent_owed_1814_1 %></td>
+        <td><%= roll.rent_ontime_1814_1 %></td>
+        <td><%= roll.rent_payment_method_1814_1 %></td>
+        <td><%= link_to 'Show', roll %></td>
+        <% if current_user == roll.user %>
+            <td><%= link_to 'Edit', edit_roll_path(roll) %></td>
+            <td><%= link_to 'Destroy', roll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+            <td></td>
+            <td></td>
+        <% end %>
+      </tr>
+    

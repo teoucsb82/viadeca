@@ -1,0 +1,40 @@
+<% provide(:title, 'Rent Rolls') %>
+
+<% if current_user.admin? %>
+  <h1><%= yield(:title) %></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Year</th>
+      <th></th>
+      <th>Amherst Rent</th>
+      <th>Centinela Rent</th>
+      <th>Oak Street Rent</th>
+      <th>1814 10th St Rent</th>
+      <th>1818 10th St Rent</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @rolls %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roll', new_roll_path %>
+<% else %>
+
+        <div class="row">
+      <div class="span12">
+          <div class="well">
+            <center>
+            <h1>Oops! This page doesn't exist!</h1>
+            </center>
+          </div>
+      </div>
+    </div>
+
+<% end %>

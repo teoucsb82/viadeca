@@ -12,51 +12,9 @@
 </div>
 
 <div class="row">
-  <div class="span6">
-    <div class="well">
-      <p>
-        <strong>Beds:</strong>
-        <%= @lease.beds %>
-      </p>
-      <p>
-        <strong>Baths:</strong>
-        <%= @lease.bath %>
-      </p>
-      <hr>
-      <p>
-        <strong>Rent:</strong>
-        <%= number_to_currency(@lease.rent) %>
-      </p>
-      <p>
-        <strong>Deposit:</strong>
-        <%= number_to_currency(@lease.deposit) %>
-      </p>
-      <hr>
+  
 
-      <p>
-        <strong>Lease started:</strong>
-        <%= @lease.lease_started %>
-      </p>
-
-      <p>
-        <strong>Lease expires:</strong>
-        <%= @lease.lease_expires %>
-      </p>
-
-      <p>
-        <strong>Late payments:</strong>
-        <%= @lease.late_payments %>
-      </p>
-      <% if @lease.doc.exists? %>
-      <hr>
-        <p>
-          <%= link_to "Lease Agreement", @lease.doc.url, :target => '_blank'%>
-        </p>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="span6">
+  <div class="span5">
     <div class="well">
       <% if @lease.tenant1_name != "" %>
         <p>
@@ -131,7 +89,49 @@
 
     </div>
   </div>
+<div class="span6 offset1">
+    <div class="well">
+      <p>
+        <strong>Beds:</strong>
+        <%= @lease.beds %>
+      </p>
+      <p>
+        <strong>Baths:</strong>
+        <%= @lease.bath %>
+      </p>
+      <hr>
+      <p>
+        <strong>Rent:</strong>
+        <%= number_to_currency(@lease.rent) %>
+      </p>
+      <p>
+        <strong>Deposit:</strong>
+        <%= number_to_currency(@lease.deposit) %>
+      </p>
+      <hr>
 
+      <p>
+        <strong>Lease started:</strong>
+        <%= @lease.lease_started %>
+      </p>
+
+      <p>
+        <strong>Lease expires:</strong>
+        <%= @lease.lease_expires %>
+      </p>
+
+      <p>
+        <strong>Late payments:</strong>
+        <%= @lease.late_payments %>
+      </p>
+      <% if @lease.doc.exists? %>
+      <hr>
+        <p>
+          <%= link_to "Lease Agreement", @lease.doc.url, :target => '_blank', class: "btn btn-primary"%>
+        </p>
+      <% end %>
+    </div>
+  </div>
 
 </div>
 

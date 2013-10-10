@@ -1,11 +1,12 @@
-<% provide(:title, 'Add Apartment') %>
+<% provide(:title, 'Edit Rent Roll') %>
 
 <% if current_user.admin? %>
   <h1><%= yield(:title) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', leases_path %>
+<%= link_to 'Show', @roll %> |
+<%= link_to 'Back', rolls_path %>
 <% else %>
 
         <div class="row">
