@@ -3,17 +3,29 @@
     <td><%= link_to "#{lease.street}, ##{lease.unit}", lease, class: "btn btn-info"%></td>
     <td><%= number_to_currency(lease.rent) %></td>
     <td>  
-        <% if lease.tenant1_name != "" %>
+        <% if lease.tenant1_name != "" && lease.tenant1_email != "" %>
+            <%= mail_to lease.tenant1_email, lease.tenant1_name %>
+        <% elsif lease.tenant1_name != "" && lease.tenant1_email == "" %>
             <%= lease.tenant1_name %>
+        <% end %>  
+
+        <% if lease.tenant2_name != "" && lease.tenant2_email != "" %>
+            <%= mail_to lease.tenant2_email, lease.tenant2_name %>
+        <% elsif lease.tenant2_name != "" && lease.tenant2_email == "" %>
+            <%= lease.tenant2_name %>
         <% end %>
-        <% if lease.tenant2_name != "" %>
-            <%= ", " + lease.tenant2_name %>
+
+  
+        <% if lease.tenant3_name != "" && lease.tenant3_email != "" %>
+            <%= mail_to lease.tenant3_email, lease.tenant3_name %>
+        <% elsif lease.tenant3_name != "" && lease.tenant3_email == "" %>
+            <%= lease.tenant3_name %>
         <% end %>
-        <% if lease.tenant3_name != "" %>
-            <%= ", " + lease.tenant3_name %>
-        <% end %>
-        <% if lease.tenant4_name != "" %>
-            <%= ", " + lease.tenant4_name %>
+  
+        <% if lease.tenant4_name != "" && lease.tenant5_email != "" %>
+            <%= mail_to lease.tenant5_email, lease.tenant4_name %>
+        <% elsif lease.tenant4_name != "" && lease.tenant5_email == "" %>
+            <%= lease.tenant4_name %>
         <% end %>
         
     </td>

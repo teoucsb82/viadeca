@@ -20,7 +20,6 @@ class ApartmentsController < ApplicationController
 
   # GET /apartments/1/edit
   def edit
-      @apartment = current_user.apartments.find(params[:id])
   end
 
   # POST /apartments
@@ -56,7 +55,6 @@ class ApartmentsController < ApplicationController
   # DELETE /apartments/1
   # DELETE /apartments/1.json
   def destroy
-    @apartment = current_user.apartments.find(params[:id])
     @apartment.destroy
     respond_to do |format|
       format.html { redirect_to apartments_url }

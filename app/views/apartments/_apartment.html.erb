@@ -1,4 +1,4 @@
-<% if apartment.isAvailable == true || current_user == apartment.user %>
+<% if apartment.isAvailable == true || current_user.admin? %>
 <hr>
   <div class="row well">
       <div class="span4">
@@ -39,7 +39,7 @@
                 </p>
 
                     <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-large" %>
-                    <% if current_user == apartment.user %>
+                    <% if current_user.admin? %>
                         
                         <p><hr>
                             <strong>Admin Tools: </strong>

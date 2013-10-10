@@ -1,4 +1,4 @@
-<% if @apartment.isAvailable == true || current_user == @apartment.user %>
+<% if @apartment.isAvailable == true || current_user.admin? %>
   <div class="row">
       <div class="span12">
           <div class="well">
@@ -246,7 +246,7 @@
     <div class="span12">
         <div class="well">
           <center>
-            <% if current_user == @apartment.user %>
+            <% if current_user.admin? %>
               <%= link_to 'Modify', edit_apartment_path(@apartment), class: "btn btn-success" %>
             <% end %>
             <%= link_to '<< Back To Availabilities', apartments_path, class: "btn btn-primary" %>
