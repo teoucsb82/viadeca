@@ -5,7 +5,7 @@ class RollsController < ApplicationController
   # GET /rolls
   # GET /rolls.json
   def index
-    @rolls = Roll.all
+    @rolls = Roll.order("created_at desc")
   end
 
   # GET /rolls/1

@@ -33,7 +33,7 @@
   <% roll.rent_paid_2462_C ||= 0 %>
 
       <tr>
-        <td><%= link_to "#{roll.month}/#{roll.year}", roll %></td>
+        <td><%= link_to "#{Date::MONTHNAMES[roll.month]} #{roll.year}", roll %></td>
         <td><%= number_to_currency(roll.rent_due_1241_1 + roll.rent_due_1241_2 + roll.rent_due_1241_3 + roll.rent_due_1241_4 + roll.rent_due_1241_5 + 
             roll.rent_due_1241_6 + roll.rent_due_1241_7 + roll.rent_due_1241_8 + roll.rent_due_1241_9 + roll.rent_due_1723_1 + roll.rent_due_1723_2 + 
             roll.rent_due_1723_3 + roll.rent_due_1723_4 + roll.rent_due_1723_5 + roll.rent_due_1814_1 + roll.rent_due_1814_2 + roll.rent_due_1814_3 + 

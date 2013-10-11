@@ -1,4 +1,4 @@
-<% provide(:title, 'Rent Roll') %>
+<% provide(:title, "#{Date::MONTHNAMES[@roll.month]} #{@roll.year} Rent") %>
 
 <% if current_user.admin? %>
   <h1></h1>
@@ -7,7 +7,7 @@
     <div class="span12">
       <div class="well">
         <center>
-         <h1><%= @roll.month %>/<%= @roll.year %> Rent</h1>
+         <h1><%= yield(:title) %></h1>
         </center>
       </div>
     </div>
@@ -143,11 +143,11 @@
       </div>
     </div>
   </div>
-<hr>
+  
  <div class="row">
   <div class="span2">
-      <h4>1241 Amherst Ave</h4>
-      <strong>Account# </strong>
+      <h4>1241 Amherst Ave</h4><hr>
+      <strong>Amherst Avenue Investments, LLC.</strong><br>Account# 2735244077
     </div>
 
     <div class="span10">
@@ -156,7 +156,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th width="30%">Unit</th>
+            <th width="10%">Unit</th>
+            <th>Tenant</th>
             <th>Monthly Rent</th>
             <th>Paid</th>
             <th>Outstanding</th>
@@ -166,6 +167,7 @@
         <tbody>
           <tr>
             <td>1</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'1').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_1) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_1) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_1-@roll.rent_paid_1241_1) %></td>
@@ -177,6 +179,7 @@
           </tr>
           <tr>
             <td>2</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'2').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_2) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_2) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_2-@roll.rent_paid_1241_2) %></td>
@@ -188,6 +191,7 @@
           </tr>
           <tr>
             <td>3</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'3').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_3) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_3) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_3-@roll.rent_paid_1241_3) %></td>
@@ -199,6 +203,7 @@
           </tr>
           <tr>
             <td>4</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'4').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_4) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_4) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_4-@roll.rent_paid_1241_4) %></td>
@@ -210,6 +215,7 @@
           </tr>
           <tr>
             <td>5</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'5').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_5) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_5) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_5-@roll.rent_paid_1241_5) %></td>
@@ -221,6 +227,7 @@
           </tr>
           <tr>
             <td>6</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'6').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_6) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_6) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_6-@roll.rent_paid_1241_6) %></td>
@@ -232,6 +239,7 @@
           </tr>
           <tr>
             <td>7</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'7').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_7) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_7) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_7-@roll.rent_paid_1241_7) %></td>
@@ -243,6 +251,7 @@
           </tr>
           <tr>
             <td>8</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'8').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_8) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_8) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_8-@roll.rent_paid_1241_8) %></td>
@@ -254,6 +263,7 @@
           </tr>
           <tr>
             <td>9</td>
+            <td><%= Lease.find_by(street: '1241 Amherst Ave', unit:'9').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_9) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1241_9) %></td>
             <td><%= number_to_currency(@roll.rent_due_1241_9-@roll.rent_paid_1241_9) %></td>
@@ -274,8 +284,8 @@
 
  <div class="row">
   <div class="span2">
-      <h4>1723 Centinela Ave</h4>
-      <strong>Account# </strong>
+      <h4>1723 Centinela Ave</h4><hr>
+      <strong>Via Deca III, LLC.</strong><br>Account# 7039844308
     </div>
 
     <div class="span10">
@@ -284,7 +294,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th width="30%">Unit</th>
+            <th width="10%">Unit</th>
+            <th>Tenant</th>
             <th>Monthly Rent</th>
             <th>Paid</th>
             <th>Outstanding</th>
@@ -294,6 +305,7 @@
         <tbody>
           <tr>
             <td>1</td>
+            <td><%= Lease.find_by(street: '1723 Centinela Ave', unit:'1').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_1) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1723_1) %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_1-@roll.rent_paid_1723_1) %></td>
@@ -305,6 +317,7 @@
           </tr>
           <tr>
             <td>2</td>
+            <td><%= Lease.find_by(street: '1723 Centinela Ave', unit:'2').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_2) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1723_2) %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_2-@roll.rent_paid_1723_2) %></td>
@@ -316,6 +329,7 @@
           </tr>
           <tr>
             <td>3</td>
+            <td><%= Lease.find_by(street: '1723 Centinela Ave', unit:'3').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_3) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1723_3) %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_3-@roll.rent_paid_1723_3) %></td>
@@ -327,6 +341,7 @@
           </tr>
           <tr>
             <td>4</td>
+            <td><%= Lease.find_by(street: '1723 Centinela Ave', unit:'4').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_4) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1723_4) %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_4-@roll.rent_paid_1723_4) %></td>
@@ -338,6 +353,7 @@
           </tr>
           <tr>
             <td>5</td>
+            <td><%= Lease.find_by(street: '1723 Centinela Ave', unit:'5').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_5) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1723_5) %></td>
             <td><%= number_to_currency(@roll.rent_due_1723_5-@roll.rent_paid_1723_5) %></td>
@@ -358,8 +374,8 @@
 
  <div class="row">
   <div class="span2">
-      <h4>1814 10th Street</h4>
-      <strong>Account# </strong>
+      <h4>1814 10th Street</h4><hr>
+      <strong>Via Deca II, LLC.</strong><br>Account# 6707993959
     </div>
 
     <div class="span10">
@@ -368,7 +384,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th width="30%">Unit</th>
+            <th width="10%">Unit</th>
+            <th>Tenant</th>
             <th>Monthly Rent</th>
             <th>Paid</th>
             <th>Outstanding</th>
@@ -378,6 +395,7 @@
         <tbody>
           <tr>
             <td>1</td>
+            <td><%= Lease.find_by(street: '1814 10th Street', unit:'1').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_1) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1814_1) %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_1-@roll.rent_paid_1814_1) %></td>
@@ -389,6 +407,7 @@
           </tr>
           <tr>
             <td>2</td>
+            <td><%= Lease.find_by(street: '1814 10th Street', unit:'2').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_2) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1814_2) %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_2-@roll.rent_paid_1814_2) %></td>
@@ -400,6 +419,7 @@
           </tr>
           <tr>
             <td>3</td>
+            <td><%= Lease.find_by(street: '1814 10th Street', unit:'3').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_3) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1814_3) %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_3-@roll.rent_paid_1814_3) %></td>
@@ -411,6 +431,7 @@
           </tr>
           <tr>
             <td>4</td>
+            <td><%= Lease.find_by(street: '1814 10th Street', unit:'4').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_4) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1814_4) %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_4-@roll.rent_paid_1814_4) %></td>
@@ -422,6 +443,7 @@
           </tr>
           <tr>
             <td>5</td>
+            <td><%= Lease.find_by(street: '1814 10th Street', unit:'5').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_5) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1814_5) %></td>
             <td><%= number_to_currency(@roll.rent_due_1814_5-@roll.rent_paid_1814_5) %></td>
@@ -442,8 +464,8 @@
 
  <div class="row">
   <div class="span2">
-      <h4>1818 10th Street</h4>
-      <strong>Account# </strong>
+      <h4>1818 10th Street</h4><hr>
+      <strong>Via Deca I, LLC.</strong><br>Account# 8480025603
     </div>
 
     <div class="span10">
@@ -452,7 +474,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th width="30%">Unit</th>
+            <th width="10%">Unit</th>
+            <th>Tenant</th>
             <th>Monthly Rent</th>
             <th>Paid</th>
             <th>Outstanding</th>
@@ -462,6 +485,7 @@
         <tbody>
           <tr>
             <td>1</td>
+            <td><%= Lease.find_by(street: '1818 10th Street', unit:'1').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_1) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1818_1) %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_1-@roll.rent_paid_1818_1) %></td>
@@ -473,6 +497,7 @@
           </tr>
           <tr>
             <td>A</td>
+            <td><%= Lease.find_by(street: '1818 10th Street', unit:'A').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_A) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1818_A) %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_A-@roll.rent_paid_1818_A) %></td>
@@ -484,6 +509,7 @@
           </tr>
           <tr>
             <td>B</td>
+            <td><%= Lease.find_by(street: '1818 10th Street', unit:'B').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_B) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1818_B) %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_B-@roll.rent_paid_1818_B) %></td>
@@ -495,6 +521,7 @@
           </tr>
           <tr>
             <td>C</td>
+            <td><%= Lease.find_by(street: '1818 10th Street', unit:'C').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_C) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1818_C) %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_C-@roll.rent_paid_1818_C) %></td>
@@ -506,6 +533,7 @@
           </tr>
           <tr>
             <td>D</td>
+            <td><%= Lease.find_by(street: '1818 10th Street', unit:'D').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_D) %></td>
             <td><%= number_to_currency(@roll.rent_paid_1818_D) %></td>
             <td><%= number_to_currency(@roll.rent_due_1818_D-@roll.rent_paid_1818_D) %></td>
@@ -535,7 +563,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th width="30%">Unit</th>
+            <th width="10%">Unit</th>
+            <th>Tenant</th>
             <th>Monthly Rent</th>
             <th>Paid</th>
             <th>Outstanding</th>
@@ -545,6 +574,7 @@
         <tbody>
           <tr>
             <td>A</td>
+            <td><%= Lease.find_by(street: '2462 Oak Street', unit:'A').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_2462_A) %></td>
             <td><%= number_to_currency(@roll.rent_paid_2462_A) %></td>
             <td><%= number_to_currency(@roll.rent_due_2462_A-@roll.rent_paid_2462_A) %></td>
@@ -556,6 +586,7 @@
           </tr>
           <tr>
             <td>B</td>
+            <td><%= Lease.find_by(street: '2462 Oak Street', unit:'B').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_2462_B) %></td>
             <td><%= number_to_currency(@roll.rent_paid_2462_B) %></td>
             <td><%= number_to_currency(@roll.rent_due_2462_B-@roll.rent_paid_2462_B) %></td>
@@ -567,6 +598,7 @@
           </tr>
           <tr>
             <td>C</td>
+            <td><%= Lease.find_by(street: '2462 Oak Street', unit:'C').tenant1_name %></td>
             <td><%= number_to_currency(@roll.rent_due_2462_C) %></td>
             <td><%= number_to_currency(@roll.rent_paid_2462_C) %></td>
             <td><%= number_to_currency(@roll.rent_due_2462_C-@roll.rent_paid_2462_C) %></td>
