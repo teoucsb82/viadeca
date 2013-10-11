@@ -1,4 +1,4 @@
-<% if apartment.isAvailable == true || current_user.admin? %>
+<% if apartment.isAvailable == true || (signed_in? && current_user.admin?) %>
 <hr>
   <div class="row well">
       <div class="span4">
