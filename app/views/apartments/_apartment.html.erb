@@ -39,7 +39,7 @@
                 </p>
 
                     <%= link_to 'More info >>', apartment, class: "btn btn-primary btn-large" %>
-                    <% if current_user.admin? %>
+                    <% if signed_in? && current_user.admin? %>
                         
                         <p><hr>
                             <strong>Admin Tools: </strong>
