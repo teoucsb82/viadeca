@@ -309,6 +309,19 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="span5">          
+      <div class="well">
+        <h3>1818 10th Street - Apt #D</h3>
+        <%= f.input :rent_due_1818_D, label: "Rent Due", :input_html => { :value => Lease.find_by(street: '1818 10th Street', unit:'D').rent } %>
+        <%= f.input :rent_paid_1818_D, label: "Rent Collected" %>
+        <%= f.input :rent_ontime_1818_D, label: "Late?" %>
+        <%= f.input :rent_payment_method_1818_D, label: "Payment Method", :include_blank => "", collection: Roll::PAYMENT %>
+        <%= f.input :img_1818_d, label: "Upload Check/PDF" %>
+        <%= f.input :notes_1818_D, label: "Special Notes" %>
+      </div>
+    </div>
+  </div>
     <!--2462 -->
 
   <hr>

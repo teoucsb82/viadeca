@@ -6,14 +6,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Month</th>
-      <th>Year</th>
+      <th>Date</th>
+      <th>Total Rent Due</th>
+      <th>Total Rent Paid</th>
+      <th>Outstanding Balance</th>
       <th></th>
-      <th>Amherst Rent</th>
-      <th>Centinela Rent</th>
-      <th>Oak Street Rent</th>
-      <th>1814 10th St Rent</th>
-      <th>1818 10th St Rent</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -23,8 +21,9 @@
 </table>
 
 <br>
-
-<%= link_to 'New Roll', new_roll_path %>
+<center>
+  <%= link_to 'New Rent Roll +', new_roll_path, class: "btn btn-info" %>
+</center>
 <% else %>
 
         <div class="row">

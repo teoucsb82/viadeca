@@ -1,14 +1,63 @@
+<!--set variable-->
+
+  <% roll.rent_paid_1241_1 ||= 0 %>
+  <% roll.rent_paid_1241_2 ||= 0 %>
+  <% roll.rent_paid_1241_3 ||= 0 %>
+  <% roll.rent_paid_1241_4 ||= 0 %>
+  <% roll.rent_paid_1241_5 ||= 0 %>
+  <% roll.rent_paid_1241_6 ||= 0 %>
+  <% roll.rent_paid_1241_7 ||= 0 %>
+  <% roll.rent_paid_1241_8 ||= 0 %>
+  <% roll.rent_paid_1241_9 ||= 0 %>
+
+  <% roll.rent_paid_1723_1 ||= 0 %>
+  <% roll.rent_paid_1723_2 ||= 0 %>
+  <% roll.rent_paid_1723_3 ||= 0 %>
+  <% roll.rent_paid_1723_4 ||= 0 %>
+  <% roll.rent_paid_1723_5 ||= 0 %>
+
+  <% roll.rent_paid_1814_1 ||= 0 %>
+  <% roll.rent_paid_1814_2 ||= 0 %>
+  <% roll.rent_paid_1814_3 ||= 0 %>
+  <% roll.rent_paid_1814_4 ||= 0 %>
+  <% roll.rent_paid_1814_5 ||= 0 %>
+
+  <% roll.rent_paid_1818_1 ||= 0 %>
+  <% roll.rent_paid_1818_A ||= 0 %>
+  <% roll.rent_paid_1818_B ||= 0 %>
+  <% roll.rent_paid_1818_C ||= 0 %>
+  <% roll.rent_paid_1818_D ||= 0 %>
+
+  <% roll.rent_paid_2462_A ||= 0 %>
+  <% roll.rent_paid_2462_B ||= 0 %>
+  <% roll.rent_paid_2462_C ||= 0 %>
 
       <tr>
-        <td><%= roll.month %></td>
-        <td><%= roll.year %></td>
-        <td><%= roll.rent_owed_1814_1 %></td>
-        <td><%= roll.rent_ontime_1814_1 %></td>
-        <td><%= roll.rent_payment_method_1814_1 %></td>
-        <td><%= link_to 'Show', roll %></td>
+        <td><%= link_to "#{roll.month}/#{roll.year}", roll %></td>
+        <td><%= number_to_currency(roll.rent_due_1241_1 + roll.rent_due_1241_2 + roll.rent_due_1241_3 + roll.rent_due_1241_4 + roll.rent_due_1241_5 + 
+            roll.rent_due_1241_6 + roll.rent_due_1241_7 + roll.rent_due_1241_8 + roll.rent_due_1241_9 + roll.rent_due_1723_1 + roll.rent_due_1723_2 + 
+            roll.rent_due_1723_3 + roll.rent_due_1723_4 + roll.rent_due_1723_5 + roll.rent_due_1814_1 + roll.rent_due_1814_2 + roll.rent_due_1814_3 + 
+            roll.rent_due_1814_4 + roll.rent_due_1814_5 + roll.rent_due_1818_1 + roll.rent_due_1818_A + roll.rent_due_1818_B + roll.rent_due_1818_C + 
+            roll.rent_due_1818_D + roll.rent_due_2462_A + roll.rent_due_2462_B + roll.rent_due_2462_C) %></td>
+        <td><%= number_to_currency(roll.rent_paid_1241_1 + roll.rent_paid_1241_2 + roll.rent_paid_1241_3 + roll.rent_paid_1241_4 + roll.rent_paid_1241_5 + 
+            roll.rent_paid_1241_6 + roll.rent_paid_1241_7 + roll.rent_paid_1241_8 + roll.rent_paid_1241_9 + roll.rent_paid_1723_1 + roll.rent_paid_1723_2 + 
+            roll.rent_paid_1723_3 + roll.rent_paid_1723_4 + roll.rent_paid_1723_5 + roll.rent_paid_1814_1 + roll.rent_paid_1814_2 + roll.rent_paid_1814_3 + 
+            roll.rent_paid_1814_4 + roll.rent_paid_1814_5 + roll.rent_paid_1818_1 + roll.rent_paid_1818_A + roll.rent_paid_1818_B + roll.rent_paid_1818_C + 
+            roll.rent_paid_1818_D + roll.rent_paid_2462_A + roll.rent_paid_2462_B + roll.rent_paid_2462_C) %></td>
+        <td><%= number_to_currency((roll.rent_due_1241_1 + roll.rent_due_1241_2 + roll.rent_due_1241_3 + roll.rent_due_1241_4 + roll.rent_due_1241_5 + 
+            roll.rent_due_1241_6 + roll.rent_due_1241_7 + roll.rent_due_1241_8 + roll.rent_due_1241_9 + roll.rent_due_1723_1 + roll.rent_due_1723_2 + 
+            roll.rent_due_1723_3 + roll.rent_due_1723_4 + roll.rent_due_1723_5 + roll.rent_due_1814_1 + roll.rent_due_1814_2 + roll.rent_due_1814_3 + 
+            roll.rent_due_1814_4 + roll.rent_due_1814_5 + roll.rent_due_1818_1 + roll.rent_due_1818_A + roll.rent_due_1818_B + roll.rent_due_1818_C + 
+            roll.rent_due_1818_D + roll.rent_due_2462_A + roll.rent_due_2462_B + roll.rent_due_2462_C)-(roll.rent_paid_1241_1 + roll.rent_paid_1241_2 + roll.rent_paid_1241_3 + roll.rent_paid_1241_4 + roll.rent_paid_1241_5 + 
+            roll.rent_paid_1241_6 + roll.rent_paid_1241_7 + roll.rent_paid_1241_8 + roll.rent_paid_1241_9 + roll.rent_paid_1723_1 + roll.rent_paid_1723_2 + 
+            roll.rent_paid_1723_3 + roll.rent_paid_1723_4 + roll.rent_paid_1723_5 + roll.rent_paid_1814_1 + roll.rent_paid_1814_2 + roll.rent_paid_1814_3 + 
+            roll.rent_paid_1814_4 + roll.rent_paid_1814_5 + roll.rent_paid_1818_1 + roll.rent_paid_1818_A + roll.rent_paid_1818_B + roll.rent_paid_1818_C + 
+            roll.rent_paid_1818_D + roll.rent_paid_2462_A + roll.rent_paid_2462_B + roll.rent_paid_2462_C)) %></td>
+
+
         <% if current_user == roll.user %>
-            <td><%= link_to 'Edit', edit_roll_path(roll) %></td>
-            <td><%= link_to 'Destroy', roll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_roll_path(roll), class: "btn btn-success" %></td>
+            <td><%= link_to 'Destroy', roll, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% else %>
             <td></td>
             <td></td>
