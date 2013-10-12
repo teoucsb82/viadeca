@@ -58,6 +58,7 @@
             <th>Monthly Rent</th>
             <th>Paid</th>
             <th>Outstanding</th>
+            <th>Receipt</th>
           </tr>
         </thead>
         <tbody>
@@ -69,7 +70,12 @@
             @roll.rent_paid_1241_6 + @roll.rent_paid_1241_7 + @roll.rent_paid_1241_8 + @roll.rent_paid_1241_9) %></td>
             <td><%= number_to_currency((@roll.rent_due_1241_1 + @roll.rent_due_1241_2 + @roll.rent_due_1241_3 + @roll.rent_due_1241_4 + @roll.rent_due_1241_5 + 
             @roll.rent_due_1241_6 + @roll.rent_due_1241_7 + @roll.rent_due_1241_8 + @roll.rent_due_1241_9) - (@roll.rent_paid_1241_1 + @roll.rent_paid_1241_2 + @roll.rent_paid_1241_3 + @roll.rent_paid_1241_4 + @roll.rent_paid_1241_5 + 
-            @roll.rent_paid_1241_6 + @roll.rent_paid_1241_7 + @roll.rent_paid_1241_8 + @roll.rent_paid_1241_9)) %></td>     
+            @roll.rent_paid_1241_6 + @roll.rent_paid_1241_7 + @roll.rent_paid_1241_8 + @roll.rent_paid_1241_9)) %></td> 
+            <td>
+                <% if @roll.img_1241_rent.exists? %>
+                  <%= link_to "View Deposit", @roll.img_1241_rent(:original), :target => '_blank', class: "btn btn-info" %>
+                <% end %>
+            </td>
           </tr>
 
           <tr>
@@ -81,6 +87,11 @@
             <td><%= number_to_currency((@roll.rent_due_1723_1 + @roll.rent_due_1723_2 + 
             @roll.rent_due_1723_3 + @roll.rent_due_1723_4 + @roll.rent_due_1723_5) - (@roll.rent_paid_1723_1 + @roll.rent_paid_1723_2 + 
             @roll.rent_paid_1723_3 + @roll.rent_paid_1723_4 + @roll.rent_paid_1723_5)) %></td>
+            <td>
+                <% if @roll.img_1723_rent.exists? %>
+                  <%= link_to "View Deposit", @roll.img_1723_rent(:original), :target => '_blank', class: "btn btn-info" %>
+                <% end %>
+            </td>
           </tr>
 
           <tr>
@@ -91,7 +102,12 @@
             @roll.rent_paid_1814_4 + @roll.rent_paid_1814_5) %></td>
             <td><%= number_to_currency((@roll.rent_due_1814_1 + @roll.rent_due_1814_2 + @roll.rent_due_1814_3 + 
             @roll.rent_due_1814_4 + @roll.rent_due_1814_5)-(@roll.rent_paid_1814_1 + @roll.rent_paid_1814_2 + @roll.rent_paid_1814_3 + 
-            @roll.rent_paid_1814_4 + @roll.rent_paid_1814_5)) %></td>
+            @roll.rent_paid_1814_4 + @roll.rent_paid_1814_5)) %></td> 
+            <td>
+                <% if @roll.img_1814_rent.exists? %>
+                  <%= link_to "View Deposit", @roll.img_1814_rent(:original), :target => '_blank', class: "btn btn-info" %>
+                <% end %>
+              </td>
           </tr>
 
           <tr>
@@ -102,14 +118,24 @@
             @roll.rent_paid_1818_D) %></td>
             <td><%= number_to_currency((@roll.rent_due_1818_1 + @roll.rent_due_1818_A + @roll.rent_due_1818_B + @roll.rent_due_1818_C + 
             @roll.rent_due_1818_D)-(@roll.rent_paid_1818_1 + @roll.rent_paid_1818_A + @roll.rent_paid_1818_B + @roll.rent_paid_1818_C + 
-            @roll.rent_paid_1818_D)) %></td>
+            @roll.rent_paid_1818_D)) %></td> 
+            <td>
+                <% if @roll.img_1818_rent.exists? %>
+                  <%= link_to "View Deposit", @roll.img_1818_rent(:original), :target => '_blank', class: "btn btn-info" %>
+                <% end %>
+            </td>
           </tr>
 
           <tr>
             <td><strong>2462 Oak St</strong></td>
             <td><%= number_to_currency(@roll.rent_due_2462_A + @roll.rent_due_2462_B + @roll.rent_due_2462_C) %></td>
             <td><%= number_to_currency(@roll.rent_paid_2462_A + @roll.rent_paid_2462_B + @roll.rent_paid_2462_C) %></td>
-            <td><%= number_to_currency((@roll.rent_due_2462_A + @roll.rent_due_2462_B + @roll.rent_due_2462_C)-(@roll.rent_paid_2462_A + @roll.rent_paid_2462_B + @roll.rent_paid_2462_C)) %></td>
+            <td><%= number_to_currency((@roll.rent_due_2462_A + @roll.rent_due_2462_B + @roll.rent_due_2462_C)-(@roll.rent_paid_2462_A + @roll.rent_paid_2462_B + @roll.rent_paid_2462_C)) %></td> 
+            <td>
+                <% if @roll.img_2462_rent.exists? %>
+                  <%= link_to "View Deposit", @roll.img_2462_rent(:original), :target => '_blank', class: "btn btn-info" %>
+                <% end %>
+            </td>
           </tr>
 
           <tr></tr>
@@ -135,6 +161,7 @@
             @roll.rent_paid_1723_3 + @roll.rent_paid_1723_4 + @roll.rent_paid_1723_5 + @roll.rent_paid_1814_1 + @roll.rent_paid_1814_2 + @roll.rent_paid_1814_3 + 
             @roll.rent_paid_1814_4 + @roll.rent_paid_1814_5 + @roll.rent_paid_1818_1 + @roll.rent_paid_1818_A + @roll.rent_paid_1818_B + @roll.rent_paid_1818_C + 
             @roll.rent_paid_1818_D + @roll.rent_paid_2462_A + @roll.rent_paid_2462_B + @roll.rent_paid_2462_C)) %></td>
+            <td></td>
           </tr>
  
        </tbody>

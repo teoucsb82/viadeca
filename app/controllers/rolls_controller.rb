@@ -106,6 +106,7 @@ class RollsController < ApplicationController
             :img_1818_1, :img_1818_a, :img_1818_b, :img_1818_c, :img_1818_d,
             :img_2462_a, :img_2462_b, :img_2462_c,
             :img_1241_1, :img_1241_2, :img_1241_3, :img_1241_4, :img_1241_5, :img_1241_6, :img_1241_7, :img_1241_8, :img_1241_9,
-            :img_1723_1, :img_1723_2, :img_1723_3, :img_1723_4, :img_1723_5)
+            :img_1723_1, :img_1723_2, :img_1723_3, :img_1723_4, :img_1723_5,
+            :img_1241_rent, :img_1723_rent, :img_1814_rent, :img_1818_rent, :img_2462_rent)
     end
 end

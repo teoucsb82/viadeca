@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010195650) do
+ActiveRecord::Schema.define(version: 20131011235914) do
 
   create_table "admins", force: true do |t|
     t.string   "email",              default: "", null: false
@@ -515,6 +515,26 @@ ActiveRecord::Schema.define(version: 20131010195650) do
     t.string   "img_1241_9_content_type"
     t.integer  "img_1241_9_file_size"
     t.datetime "img_1241_9_updated_at"
+    t.string   "img_1241_rent_file_name"
+    t.string   "img_1241_rent_content_type"
+    t.integer  "img_1241_rent_file_size"
+    t.datetime "img_1241_rent_updated_at"
+    t.string   "img_1723_rent_file_name"
+    t.string   "img_1723_rent_content_type"
+    t.integer  "img_1723_rent_file_size"
+    t.datetime "img_1723_rent_updated_at"
+    t.string   "img_1814_rent_file_name"
+    t.string   "img_1814_rent_content_type"
+    t.integer  "img_1814_rent_file_size"
+    t.datetime "img_1814_rent_updated_at"
+    t.string   "img_1818_rent_file_name"
+    t.string   "img_1818_rent_content_type"
+    t.integer  "img_1818_rent_file_size"
+    t.datetime "img_1818_rent_updated_at"
+    t.string   "img_2462_rent_file_name"
+    t.string   "img_2462_rent_content_type"
+    t.integer  "img_2462_rent_file_size"
+    t.datetime "img_2462_rent_updated_at"
   end
 
   add_index "rolls", ["user_id"], name: "index_rolls_on_user_id"

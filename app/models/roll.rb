@@ -34,7 +34,8 @@ class Roll < ActiveRecord::Base
 						:img_1818_1, :img_1818_a, :img_1818_b, :img_1818_c, :img_1818_d,
 						:img_2462_a, :img_2462_b, :img_2462_c,
 						:img_1241_1, :img_1241_2, :img_1241_3, :img_1241_4, :img_1241_5, :img_1241_6, :img_1241_7, :img_1241_8, :img_1241_9,
-						:img_1723_1, :img_1723_2, :img_1723_3, :img_1723_4, :img_1723_5
+						:img_1723_1, :img_1723_2, :img_1723_3, :img_1723_4, :img_1723_5,
+						:img_1241_rent, :img_1723_rent, :img_1814_rent, :img_1818_rent, :img_2462_rent
 
 	has_attached_file :img_1241_1, styles: { medium: "320x240>"}
 	has_attached_file :img_1241_2, styles: { medium: "320x240>"}
@@ -68,6 +69,12 @@ class Roll < ActiveRecord::Base
 	has_attached_file :img_2462_b, styles: { medium: "320x240>"}
 	has_attached_file :img_2462_c, styles: { medium: "320x240>"}
 
+
+	has_attached_file :img_1241_rent, styles: { medium: "320x240>"}
+	has_attached_file :img_1723_rent, styles: { medium: "320x240>"}
+	has_attached_file :img_1814_rent, styles: { medium: "320x240>"}
+	has_attached_file :img_1818_rent, styles: { medium: "320x240>"}
+	has_attached_file :img_2462_rent, styles: { medium: "320x240>"}
 
 	belongs_to :user
 	validates :user_id, presence: true
