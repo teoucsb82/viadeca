@@ -1,5 +1,12 @@
-$baseFontFamily: Metrophobic;
+
 @import url(http://fonts.googleapis.com/css?family=Metrophobic);
+@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+@import url(http://fonts.googleapis.com/css?family=Nobile);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Amatic+SC);
+@import url(http://fonts.googleapis.com/css?family=Paytone+One);
+$baseFontFamily: Metrophobic;
 
 /* Navbar elements 
 
@@ -10,6 +17,8 @@ $navbarBackground: white;
 
 /* Define navbarSearchBorder as background hero unit BG color */
 $navbarSearchBorder: #D1EAF3;
+$navbarBackground: #D1EAF3;
+$navbarBackgroundHighlight: #D1EAF3;
 
 /* Text elements */
 $bodyBackground: white;
@@ -23,6 +32,10 @@ $navbarSearchBorder: #D1EAF3;
 body{
     padding-top: 60px;
     padding-bottom: 60px;
+    background: url('http://s3.amazonaws.com/viadeca/apartments/images/000/000/014/original/photo-17.JPG?1383691823');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
 @import 'bootstrap-responsive';
@@ -32,11 +45,20 @@ body{
     border: 0;
 }
 
+.brand {
+    font-family: Paytone One;
+}
+
 .navbar-fixed-bottom{
 	padding-bottom: 20px;
 }
 
 .hero-unit {
+    padding: 30px;
+    background-color: $navbarSearchBorder;
+}
+
+.well {
     padding: 30px;
     background-color: $navbarSearchBorder;
 }

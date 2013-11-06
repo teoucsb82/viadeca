@@ -1,7 +1,5 @@
 <% provide(:title, 'Ticket ' + @repair.id.to_s) %>
 
-<h1>Repair Center</h1>
-
 <% if current_user == @repair.user || current_user.admin? %>
   <div class="row">
       <div class="span12">

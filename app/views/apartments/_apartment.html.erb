@@ -1,6 +1,7 @@
 <% if apartment.isAvailable == true || (signed_in? && current_user.admin?) %>
-<hr>
-  <div class="row well">
+
+  <div class="hero-unit">
+    <div class="row">
       <div class="span4">
           <div>
             <%= link_to image_tag(apartment.image(:medium)), apartment %>
@@ -51,6 +52,7 @@
             </div>
         </div>
       </div>
+    </div>
 
 <% end %>
 

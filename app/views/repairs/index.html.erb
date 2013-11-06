@@ -1,7 +1,8 @@
 <% provide(:title, 'Repair Center') %>
 
-<h1><%= yield(:title) %></h1>
-<table class="table table-striped">
+<div class="hero-unit">
+<h1><%= yield(:title) %></h1><hr>
+<table class="table">
   <thead>
     <tr>
       <th width="10%"><%= sortable "id", "Ticket" %></th>
@@ -35,3 +36,4 @@
       </div>
   </div>
   <% end %>
+</div>

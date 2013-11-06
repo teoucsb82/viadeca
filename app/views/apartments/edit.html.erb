@@ -1,7 +1,8 @@
+<% provide(:title, 'Edit Listing') %>
 <% if current_user.admin? %>
-
+  <div class="hero-unit">
 	<h1>Editing apartment - <%= @apartment.streetAddress %>, #<%= @apartment.aptNumber %></h1>
-
+</div>
 	<%= render 'form' %>
 
 <% else %>

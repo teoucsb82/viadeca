@@ -3,12 +3,22 @@
 
 	<!--Not Logged in -->
 
-		<div class="center hero-unit">
-			<h1>Welcome the Via Deca Website! </h1>
+		<div class="hero-unit">
+			<center>
+			<h1 class="brand">Via Deca Partners</h1>
+			</center>
+		</div>
+
+		<div class="hero-unit">
 			<p>
 				Via Deca Partners is a world-renowed rental property management company based in Santa Monica, CA. We take pride in our well maintained units and our quick responsiveness to tenants.
 			</p>
-
+			<hr style="border: none; background-color: black; height: 1px;">
+			<center>
+			<p>
+				<%= link_to "View Availabilities", avail_path, class: "btn btn-primary btn-large" %>
+			</p>
+			</center>
 		</div>
 
 <% else %>

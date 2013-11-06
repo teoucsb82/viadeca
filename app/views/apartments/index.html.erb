@@ -1,13 +1,16 @@
 <% provide(:title, 'Availabilities') %>
 
-<h1><%= yield(:title) %></h1>
-<small class="pull-left">
-	<%= will_paginate @apartments %>
-</small>
-<div id="apartments">
-  <%= render @apartments %><br>
-</div>
+<div class="hero-unit">
+	<h1 align="center"><%= yield(:title) %></h1>
 
-<small class="pull-left">
-	<%= will_paginate @apartments %>
-</small>
+</div>
+	<small class="pull-left">
+		<%= will_paginate @apartments %>
+	</small>
+	
+	  <%= render @apartments %><br>
+
+	<small class="pull-left">
+		<%= will_paginate @apartments %>
+	</small>
+	

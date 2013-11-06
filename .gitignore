@@ -25,3 +25,4 @@ doc/
 
 #ignore paperclip uploaded files
 /public/system
+/config/initializers/stripe.rb

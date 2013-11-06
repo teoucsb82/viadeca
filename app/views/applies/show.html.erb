@@ -1,7 +1,9 @@
 <% provide(:title, 'Application Submitted') %>
 
 
+  <div class="hero-unit">
 <h1><%= yield(:title) %>!</h1>
+</div>
 <center>
   <div class="hero-unit">
     Your application has been submitted and a confirmation email has been sent to <%= @apply.email %>.

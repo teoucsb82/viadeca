@@ -4,8 +4,8 @@
   <div class="form-inputs">
     <div class="row">
         <div class="span6">
+            <div class="well">  
             <h3>Personal Information</h3><hr>
-            <div class="well">
                 <%= f.input :aptaddress, label: "Applying for unit", :input_html => { :value => Apartment.last.streetAddress + ", Apt# " + Apartment.last.aptNumber } %>
                 <%= f.input :name %>
                 <%= f.input :email %>
@@ -20,8 +20,8 @@
 
     <div class="row">
         <div class="span6">
-            <h3>Current Address</h3><hr>
             <div class="well">    
+            <h3>Current Address</h3><hr>
                 <%= f.input :current_address, label: "Current Address" %>
                 <%= f.input :current_unit, label: "Unit" %>
                 <%= f.input :current_city, label: "Current City" %>
@@ -36,9 +36,9 @@
                 <%= f.input :current_reason, label: "Reason for leaving", as: :text, input_html: { rows: "3" }  %>
             </div>
         </div>
-        <div class="span6">
-            <h3>Previous Address</h3><hr>            
+        <div class="span6">       
             <div class="well">    
+            <h3>Previous Address</h3><hr>     
                 <%= f.input :previous_address, label: "Previous Address" %>
                 <%= f.input :previous_unit, label: "Unit" %>
                 <%= f.input :previous_city, label: "Previous City" %>
@@ -57,8 +57,8 @@
 
     <div class="row">
         <div class="span6">
-            <h3>Employer Information</h3><hr>
             <div class="well">      
+            <h3>Employer Information</h3><hr>
                 <%= f.input :employer, label: "Employer Name" %>
                 <%= f.input :employer_address %>
                 <%= f.input :employer_city %>
@@ -77,16 +77,16 @@
 
     <div class="row">
         <div class="span6">
-            <h3>Emergency Contact Information</h3><hr>
             <div class="well">  
+            <h3>Emergency Contact Information</h3><hr>
                 <%= f.input :emergency_contact %>
                 <%= f.input :emergency_relationship, label: "Relationship" %>
                 <%= f.input :emergency_phone %>
             </div>
         </div>
         <div class="span6">
-            <h3>Vehicle Information</h3><hr>
             <div class="well">
+            <h3>Vehicle Information</h3><hr>
                 <%= f.input :vehicle_make, placeholder: "ex: Toyota" %>
                 <%= f.input :vehicle_model, placeholder: "ex. Prius" %>
                 <%= f.input :vehicle_color %>
@@ -98,16 +98,16 @@
 
     <div class="row">
         <div class="span12">
-            <h3>Additional Information</h3><hr>
             <div class="well">  
+            <h3>Additional Information</h3><hr>
                 <%= f.input :message, label: "Additional Information", as: :text, :input_html => { :rows => 5, :placeholder => "Please enter any additional information you want here. Examples include names of roommates you are applying with or any special requests you may have.", :class => "span9"} %>
             </div>
         </div>
 
 
         <div class="span12">
-            <h3>Terms and Conditions</h3><hr>
             <div class="well">  
+            <h3>Terms and Conditions</h3><hr>
                 <small>
                     I authorize <strong>Via Deca Partners</strong> to immediately obtain such credit reports, character reports, criminal reports, verification of rental and employement history. I further understand that false, fraudulent or misleading information disclosed or omitted or incomplete information may be grounds for denial of tenancy or subsequent eviction. If you enter into a rental agreement with <strong>Via Deca Partners</strong> they have the right to obtain credit reports, criminal reports and background information on you while you are residing in the rental property.
                 </small>
@@ -117,7 +117,7 @@
         </div>
     </div>
 
-  <div class="form-actions">
+  <div class="form-actions well">
     <%= f.submit "Submit Application!", class: "btn btn-success btn-large" %>
   </div>
 
