@@ -8,12 +8,6 @@
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
 $baseFontFamily: Metrophobic;
 
-/* Navbar elements 
-
-$navbarBackgroundHighlight: white;
-$navbarBackground: white;
-
-*/
 
 /* Define navbarSearchBorder as background hero unit BG color */
 $navbarSearchBorder: #D1EAF3;
@@ -32,7 +26,6 @@ $navbarSearchBorder: #D1EAF3;
 @import 'bootstrap-responsive';
 
 body{
-    background-image: url(http://s3.amazonaws.com/viadeca/apartments/images/000/000/014/original/photo-17.JPG?1383691823);
     padding-top: 60px;
     padding-bottom: 60px;
     background-size: 100%;
