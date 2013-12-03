@@ -5,8 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :image, label: "Upload Receipt Scan" %>
-    <%= f.input :store, :include_blank => "--Select Store--",
-      collection: Receipt::STORES.sort %>
+    <%= f.input :store %>
     <%= f.input :month, :include_blank => "",
       collection: Receipt::MONTHS %>
     <%= f.input :day %>

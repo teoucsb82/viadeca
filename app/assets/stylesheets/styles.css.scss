@@ -1,12 +1,20 @@
 
-@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+@import 'bootstrap';
+@import 'bootstrap-responsive';
+
 @import url(http://fonts.googleapis.com/css?family=Metrophobic);
 @import url(http://fonts.googleapis.com/css?family=Nobile);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Amatic+SC);
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
-$baseFontFamily: Metrophobic;
+@import url(http://fonts.googleapis.com/css?family=Joti+One);
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+@import url(http://fonts.googleapis.com/css?family=Italianno);
+@import url(http://fonts.googleapis.com/css?family=Overlock);
+@import url(http://fonts.googleapis.com/css?family=Buenard);
+$baseFontFamily: Nobile;
+$headingsFontFamily: Overlock;
 
 
 /* Define navbarSearchBorder as background hero unit BG color */
@@ -22,8 +30,6 @@ $textColor: black;
 /* Define navbarSearchBorder as background hero unit BG color */
 $navbarSearchBorder: #D1EAF3;
 
-@import 'bootstrap';
-@import 'bootstrap-responsive';
 
 body{
     background-image: url(http://s3.amazonaws.com/viadeca/apartments/images/000/000/014/original/photo-17.JPG?1383691823);
