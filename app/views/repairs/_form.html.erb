@@ -8,7 +8,7 @@
             <div class="well">
             <h3>New Repair Request Form</h3>
               <%= f.input :description, as: :text, label: "Service requested", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
-            	<%= f.input :location_address, label: "Service address", :input_html => { :value => current_user.address } %>
+            	<%= f.input :location_address, label: "Service address", :input_html => { :value => @repair.user.address } %>
     			    <%= f.input :phn, label: "Email Address", :input_html => { :value => @repair.user.email } %>
 
               <% if current_user.admin? %>
