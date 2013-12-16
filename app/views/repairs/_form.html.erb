@@ -10,6 +10,11 @@
               <%= f.input :description, as: :text, label: "Service requested", placeholder: "(describe trouble and special instructions)", :input_html => { :rows => 5, :class => "span9"} %>
             	<%= f.input :location_address, label: "Service address", :input_html => { :value => current_user.address } %>
     			    <%= f.input :phn, label: "Email Address", :input_html => { :value => current_user.email } %>
+
+              <% if current_user.admin? %>
+              <%= f.input :repair_details, as: :text, label: "Repair Details", :input_html => { :rows => 5, :class => "span9"} %>
+                <%= f.input :status, :include_blank => "--Update Status--", collection: [['Received', 1], ['In Progress', 2], ['Closed', 3]] %>
+              <% end %>
             </div>
         </div>
     </div>

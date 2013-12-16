@@ -57,6 +57,7 @@ class RepairsController < ApplicationController
   def update
     respond_to do |format|
       if @repair.update(repair_params)
+        RepairsMailer.update_confirmation(@repair).deliver
         format.html { redirect_to @repair, notice: 'Repair was successfully updated.' }
         format.json { head :no_content }
       else

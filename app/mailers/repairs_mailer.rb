@@ -5,6 +5,11 @@ class RepairsMailer < ActionMailer::Base
   def registration_confirmation(user)
     @user = user
     mail(:to => user.phn, :subject => "Via Deca LLC - Repair Request Submitted!")
+  end  
+
+  def update_confirmation(user)
+    @user = user
+    mail(:to => user.phn, :subject => "Via Deca LLC - Repair Request Updated!")
   end
 end
 

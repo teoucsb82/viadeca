@@ -1,5 +1,7 @@
+<% if current_user.admin? %>
 <h1>Repair Center</h1>
 
+<%= render 'form' %>
 <div class="row">
     <div class="span12">
         <div class="well">
@@ -9,3 +11,4 @@
         </div>
     </div>
 </div>
+<% end %>

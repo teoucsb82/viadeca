@@ -1,0 +1,14 @@
+<p>Your repair request #<strong><%= @user.id %></strong> has been updated!</p>
+
+<p>
+	<strong>Ticket# </strong><%= @user.id %><br>
+</p>
+	<strong>Location: </strong><%= @user.location_address %><br>
+	<strong>Description: </strong><%= @user.description %><br>	
+</p>
+<p>
+	<strong>Email: </strong><%= @user.phn %><br>	
+<hr>
+<p>
+	<%= link_to "Click here", repair_url(@user) %> to view the status of your ticket.
+</p> 

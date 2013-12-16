@@ -37,6 +37,8 @@
         <td><%= link_to "Closed", repair, class: "btn btn-inverse" %></td>
     <% end %>
 
-    <td><%= link_to 'Delete Ticket', repair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %></td>
+    <td>
+                <%= link_to 'Edit Ticket', edit_repair_path(repair), class: "btn btn-success" %><br>
+                <%= link_to 'Delete Ticket', repair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-small" %></td>
    </tr>
 <% end %>
