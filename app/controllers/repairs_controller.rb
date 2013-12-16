@@ -27,7 +27,7 @@ class RepairsController < ApplicationController
   # GET /repairs/1/edit
   def edit
     if current_user.admin?
-      @repair = Repair.last
+      @repair = Repair.find(params[:id])
     else
       @repair = current_user.repairs.find(params[:id])
     end
