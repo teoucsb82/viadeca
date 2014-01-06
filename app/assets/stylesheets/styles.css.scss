@@ -1,6 +1,4 @@
 
-@import 'bootstrap';
-@import 'bootstrap-responsive';
 
 @import url(http://fonts.googleapis.com/css?family=Metrophobic);
 @import url(http://fonts.googleapis.com/css?family=Nobile);
@@ -12,27 +10,25 @@
 @import url(http://fonts.googleapis.com/css?family=Dancing+Script);
 @import url(http://fonts.googleapis.com/css?family=Italianno);
 @import url(http://fonts.googleapis.com/css?family=Overlock);
-@import url(http://fonts.googleapis.com/css?family=Buenard);
-$baseFontFamily: Nobile;
-$headingsFontFamily: Overlock;
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
+$headingsFontFamily: Montserrat Alternates;
+$baseFontFamily: Oxygen;
 
 
 /* Define navbarSearchBorder as background hero unit BG color */
 $navbarSearchBorder: #D1EAF3;
-$navbarBackground: #D1EAF3;
-$navbarBackgroundHighlight: #D1EAF3;
+$navbarBackground: $navbarSearchBorder;
+$navbarBackgroundHighlight: $navbarSearchBorder;
+
 
 /* Text elements */
-$bodyBackground: white;
 $textColor: black;
 
-
-/* Define navbarSearchBorder as background hero unit BG color */
-$navbarSearchBorder: #D1EAF3;
-
+@import 'bootstrap';
+@import 'bootstrap-responsive';
 
 body{
-    background-image: url(http://s3.amazonaws.com/viadeca/apartments/images/000/000/014/original/photo-17.JPG?1383691823);
+    background-image: url("https://s3.amazonaws.com/viadeca/images/photo-17.JPG");
     padding-top: 60px;
     padding-bottom: 60px;
     background-size: 100%;
@@ -40,28 +36,16 @@ body{
     background-attachment:fixed;
 }
 
-.navbar-inner{
-    @include box-shadow(none !important);
-    border: 0;
-}
 
 .brand {
-    font-family: Paytone One;
+    font-family: $headingsFontFamily;
 }
 
 .navbar-fixed-bottom{
 	padding-bottom: 20px;
 }
 
-.hero-unit {
-    padding: 30px;
-    background-color: $navbarSearchBorder;
-}
 
-.well {
-    padding: 30px;
-    background-color: $navbarSearchBorder;
-}
 
 .alert {
 	color: $textColor;
@@ -100,4 +84,15 @@ body{
 
 .navbar-fixed-bottom{
     padding-bottom: 0px;
+}
+
+
+.hero-unit {
+    padding: 30px;
+    background-color: $navbarSearchBorder;
+}
+
+.well {
+    padding: 30px;
+    background-color: $navbarSearchBorder;
 }

@@ -1,6 +1,7 @@
 <% provide(:title, 'Rent Rolls') %>
 
 <% if current_user.admin? %>
+<div class="well">
   <h1><%= yield(:title) %></h1>
 
 <table class="table table-striped">
@@ -24,6 +25,7 @@
 <center>
   <%= link_to 'New Rent Roll +', new_roll_path, class: "btn btn-info" %>
 </center>
+</div>
 <% else %>
 
         <div class="row">

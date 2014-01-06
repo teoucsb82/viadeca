@@ -1,6 +1,7 @@
 <% provide(:title, 'Receipts') %>
 
 <% if current_user.admin? %>
+<div class="well">
   <h1><%= yield(:title) %> - Grand Total: 
   
     <% total = 0 %>
@@ -62,6 +63,7 @@
   <center>
   <%= link_to 'New Receipt +', new_receipt_path, class: "btn btn-info"%>
 </center>
+</div>
 <% else %>
 
         <div class="row">

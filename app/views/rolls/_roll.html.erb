@@ -55,7 +55,7 @@
             roll.rent_paid_1818_D + roll.rent_paid_2462_A + roll.rent_paid_2462_B + roll.rent_paid_2462_C)) %></td>
 
 
-        <% if current_user == roll.user %>
+        <% if current_user.admin? %>
             <td><%= link_to 'Edit', edit_roll_path(roll), class: "btn btn-success" %></td>
             <td><%= link_to 'Destroy', roll, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% else %>

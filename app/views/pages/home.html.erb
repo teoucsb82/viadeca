@@ -26,10 +26,21 @@
 	<!--Tenants Section -->
 
 		<div class="center hero-unit">
-			<h1>Welcome back to the Tenant's Section! </h1>
-			<p>
-				Via Deca Partners is a world-renowed rental property management company based in Santa Monica, CA. Operating since 2010, we pride ourselves on customer service and prompt service. 
-			</p>
+			<center>
+				<h1>Tenant's Section</h1>
+			</center>
+		</div>
+		<div class="well">
+			<h2>Welcome back, <%= current_user.name.capitalize %>!</h2><hr>
+			<div class="row">
+				<div class="span4">
+					<h2> Repairs </h2>
+					<p><%= link_to "New Repair Request +", new_repair_path, class: "btn btn-primary" %> </p>
+					<p><%= link_to "View Existing Repair Status", repairs_path, class: "btn btn-primary" %> </p>
+				</div>
+				<div class="span4 offset2">
+				</div>
+			</div>
 
 		</div>
 <% end %>

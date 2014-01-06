@@ -3,7 +3,7 @@
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
-<div class="form-inputs">
+<div class="form-inputs well">
   <div class="row">
     <div class="span5">     
         <%= f.input :month, :include_blank => "", collection: Receipt::MONTHS %>

@@ -19,8 +19,12 @@ class RollsController < ApplicationController
   end
 
   # GET /rolls/1/edit
-  def edit
-    @roll = current_user.rolls.find(params[:id])
+  def edit  
+    if current_user.admin?
+      @roll = Roll.find(params[:id])
+    else
+      @roll = current_user.rolls.find(params[:id])
+    end
   end
 
   # POST /rolls
@@ -42,7 +46,7 @@ class RollsController < ApplicationController
   # PATCH/PUT /rolls/1
   # PATCH/PUT /rolls/1.json
   def update
-    @roll = current_user.rolls.find(params[:id])
+    @roll = Roll.find(params[:id])
     respond_to do |format|
       if @roll.update(roll_params)
         format.html { redirect_to @roll, notice: 'Roll was successfully updated.' }
@@ -57,7 +61,7 @@ class RollsController < ApplicationController
   # DELETE /rolls/1
   # DELETE /rolls/1.json
   def destroy
-    @roll = current_user.rolls.find(params[:id])
+    @roll = Roll.find(params[:id])
     @roll.destroy
     respond_to do |format|
       format.html { redirect_to rolls_url }
