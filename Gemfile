@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-gem 'pg'
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'devise'
 gem 'simple_form', '~> 3.0.0.rc'
@@ -44,6 +43,7 @@ end
 group :production do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 # Use sqlite3 as the database for Active Record
