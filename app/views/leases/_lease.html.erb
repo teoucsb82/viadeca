@@ -32,7 +32,7 @@
     <td><% if lease.doc.exists? %>
         <%= link_to "View Lease", lease.doc.url, :target => '_blank', class: "btn btn-plain" %></td>
         <% end %>
-        <% if current_user == lease.user %>
+        <% if current_user == lease.user || current_user.admin? %>
         <td><%= link_to 'Edit', edit_lease_path(lease), class: "btn btn-success" %></td>
         <td><%= link_to 'Destroy', lease, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% else %>

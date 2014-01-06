@@ -19,8 +19,12 @@ class LeasesController < ApplicationController
   end
 
   # GET /leases/1/edit
-  def edit
-    @lease = current_user.leases.find(params[:id])
+  def edit    
+    if current_user.admin?
+      @lease = Lease.find(params[:id])
+    else
+      @lease = current_user.leases.find(params[:id])
+    end
   end
 
   # POST /leases
@@ -42,7 +46,7 @@ class LeasesController < ApplicationController
   # PATCH/PUT /leases/1
   # PATCH/PUT /leases/1.json
   def update
-    @lease = current_user.leases.find(params[:id])
+    @lease = Lease.find(params[:id])
     respond_to do |format|
       if @lease.update(lease_params)
         format.html { redirect_to @lease, notice: 'Lease was successfully updated.' }
