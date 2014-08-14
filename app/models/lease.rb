@@ -1,5 +1,5 @@
 class Lease < ActiveRecord::Base
-	ADDRESSES = ['1818 10th Street', '1814 10th Street', '2462 Oak Street', '1241 Amherst Ave', '1723 Centinela Ave']
+	ADDRESSES = ['1818 10th Street', '1814 10th Street', '2462 Oak Street', '1241 Amherst Ave', '1723 Centinela Ave', '1124 7th Street']
 
 	attr_accessible :street, :unit, :rent, :deposit, :status, :beds, :bath,
 					:tenant1_name, :tenant1_email, :tenant1_phone, 
